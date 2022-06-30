@@ -1,0 +1,3 @@
+docker tag apache/yunikorn:admission-latest          9501sam/yunikorn:admission-latest        
+docker tag apache/yunikorn:scheduler-plugin-latest   9501sam/yunikorn:scheduler-plugin-latest 
+docker tag apache/yunikorn:scheduler-latest          9501sam/yunikorn:scheduler-latest        

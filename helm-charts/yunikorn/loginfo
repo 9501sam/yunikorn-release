@@ -1,0 +1,132 @@
+2022-06-18T10:13:24.943Z	INFO	log/logger.go:89	scheduler configuration, pretty print	{"configs": "{\n \"schedulerName\": \"yunikorn\",\n \"clusterId\": \"mycluster\",\n \"clusterVersion\": \"latest\",\n \"policyGroup\": \"queues\",\n \"schedulingIntervalSecond\": 1000000000,\n \"absoluteKubeConfigFilePath\": \"\",\n \"loggingLevel\": -1,\n \"logEncoding\": \"console\",\n \"logFilePath\": \"\",\n \"volumeBindTimeout\": 10000000000,\n \"testMode\": false,\n \"eventChannelCapacity\": 1048576,\n \"dispatchTimeout\": 300000000000,\n \"kubeQPS\": 1000,\n \"kubeBurst\": 1000,\n \"predicates\": \"\",\n \"operatorPlugins\": \"general\",\n \"enableConfigHotRefresh\": true,\n \"disableGangScheduling\": false,\n \"userLabelKey\": \"\",\n \"placeHolderImage\": \"k8s.gcr.io/pause\"\n}"}
+2022-06-18T10:13:24.943Z	INFO	shim/main.go:42	Build info	{"version": "latest", "date": "2022-06-18T18:05:10+0800"}
+2022-06-18T10:13:24.943Z	INFO	shim/main.go:43	starting scheduler	{"name": "yunikorn"}
+2022-06-18T10:13:24.943Z	INFO	shim/main.go:45	test info by me
+2022-06-18T10:13:24.943Z	INFO	log/logger.go:60	Using an already initialized logger
+2022-06-18T10:13:24.943Z	INFO	entrypoint/entrypoint.go:43	ServiceContext start all services
+2022-06-18T10:13:24.950Z	INFO	entrypoint/entrypoint.go:89	ServiceContext start scheduling services
+2022-06-18T10:13:24.951Z	INFO	entrypoint/entrypoint.go:106	creating InternalMetricsHistory
+2022-06-18T10:13:24.951Z	INFO	entrypoint/entrypoint.go:113	ServiceContext start web application service
+2022-06-18T10:13:24.952Z	INFO	webservice/webservice.go:71	web-app started	{"port": 9080}
+2022-06-18T10:13:24.952Z	INFO	shim/main.go:53	test by turtlegod
+2022-06-18T10:13:24.956Z	INFO	appmgmt/appmgmt.go:50	Initializing new AppMgmt service
+2022-06-18T10:13:24.956Z	INFO	appmgmt/appmgmt.go:53	Registering Spark operator with the AppMgmt service
+2022-06-18T10:13:24.956Z	INFO	appmgmt/appmgmt.go:83	registering app management service	{"serviceName": "general"}
+2022-06-18T10:13:24.956Z	INFO	appmgmt/appmgmt.go:87	skip registering app management service	{"serviceName": "spark-k8s-operator"}
+2022-06-18T10:13:24.956Z	INFO	appmgmt/appmgmt.go:87	skip registering app management service	{"serviceName": "yunikorn-app"}
+2022-06-18T10:13:24.957Z	INFO	dispatcher/dispatcher.go:78	Init dispatcher	{"EventChannelCapacity": 1048576, "AsyncDispatchLimit": 104857, "DispatchTimeoutInSeconds": 300}
+2022-06-18T10:13:24.957Z	INFO	dispatcher/dispatcher.go:181	starting the dispatcher
+2022-06-18T10:13:24.957Z	INFO	cache/placeholder_manager.go:144	starting the PlaceholderManager
+2022-06-18T10:13:25.958Z	INFO	appmgmt/appmgmt.go:103	starting app management service	{"serviceName": "general"}
+2022-06-18T10:13:25.958Z	INFO	appmgmt/appmgmt.go:112	app management service started	{"serviceName": "general"}
+2022-06-18T10:13:25.958Z	INFO	shim/scheduler.go:258	register RM to the scheduler	{"clusterID": "mycluster", "clusterVersion": "latest", "policyGroup": "queues", "buildInfo": {"buildDate":"2022-06-18T18:05:10+0800","buildVersion":"latest","isPluginVersion":"false"}}
+2022-06-18T10:13:25.958Z	INFO	scheduler/context.go:364	added partitions	{"partitionName": "[mycluster]default"}
+2022-06-18T10:13:25.958Z	INFO	security/acl.go:63	user list is wildcard, allowing all access
+2022-06-18T10:13:25.958Z	INFO	objects/queue.go:117	configured queue added to scheduler	{"queueName": "root"}
+2022-06-18T10:13:25.958Z	INFO	scheduler/partition.go:122	root queue added	{"partitionName": "[mycluster]default", "rmID": "mycluster"}
+2022-06-18T10:13:25.958Z	INFO	placement/placement.go:89	Building new rule list for placement manager
+2022-06-18T10:13:25.958Z	INFO	placement/placement.go:101	Activated rule set in placement manager
+2022-06-18T10:13:25.958Z	INFO	security/usergroup.go:79	creating UserGroupCache without resolver
+2022-06-18T10:13:25.958Z	INFO	security/usergroup.go:83	starting UserGroupCache cleaner	{"cleanerInterval": "1m0s"}
+2022-06-18T10:13:25.958Z	INFO	scheduler/partition.go:150	NodeSorting policy set from config	{"policyName": "fair"}
+2022-06-18T10:13:25.958Z	INFO	scheduler/partition_manager.go:63	starting partition manager	{"partition": "[mycluster]default", "cleanRootInterval": "10s"}
+2022-06-18T10:13:25.958Z	INFO	plugins/plugins.go:36	register scheduler plugin: ResourceManagerCallback
+2022-06-18T10:13:25.958Z	INFO	shim/scheduler.go:192	recovering scheduler states
+2022-06-18T10:13:25.958Z	INFO	appmgmt/appmgmt_recovery.go:46	Starting app recovery
+2022-06-18T10:13:25.958Z	INFO	general/general.go:335	Retrieving pod list
+2022-06-18T10:13:25.958Z	INFO	general/general.go:341	Pod list retrieved from api server	{"nr of pods": 13}
+2022-06-18T10:13:25.959Z	INFO	general/general.go:362	Application recovery statistics	{"nr of recoverable apps": 0, "nr of total pods": 13, "nr of pods without application metadata": 0, "nr of pods to be recovered": 0}
+2022-06-18T10:13:25.959Z	INFO	cache/nodes.go:111	adding node to context	{"nodeName": "lab", "nodeLabels": "{\"beta.kubernetes.io/arch\":\"amd64\",\"beta.kubernetes.io/os\":\"linux\",\"image\":\"true\",\"kubernetes.io/arch\":\"amd64\",\"kubernetes.io/hostname\":\"lab\",\"kubernetes.io/os\":\"linux\",\"node-role.kubernetes.io/control-plane\":\"\",\"node-role.kubernetes.io/master\":\"\",\"node.kubernetes.io/exclude-from-external-load-balancers\":\"\"}", "schedulable": true}
+2022-06-18T10:13:25.959Z	INFO	cache/nodes.go:111	adding node to context	{"nodeName": "lab5", "nodeLabels": "{\"beta.kubernetes.io/arch\":\"amd64\",\"beta.kubernetes.io/os\":\"linux\",\"kubernetes.io/arch\":\"amd64\",\"kubernetes.io/hostname\":\"lab5\",\"kubernetes.io/os\":\"linux\"}", "schedulable": true}
+2022-06-18T10:13:25.972Z	INFO	cache/node.go:120	add node occupied resource	{"nodeID": "lab5", "occupied": "resources:<key:\"memory\" value:<value:211715200 > > resources:<key:\"vcore\" value:<value:100 > > "}
+2022-06-18T10:13:25.972Z	INFO	cache/node.go:120	add node occupied resource	{"nodeID": "lab", "occupied": "resources:<key:\"memory\" value:<value:2165260864 > > resources:<key:\"vcore\" value:<value:1350 > > "}
+2022-06-18T10:13:25.972Z	INFO	cache/context_recovery.go:170	node state	{"nodeName": "lab", "nodeState": "New"}
+2022-06-18T10:13:25.972Z	INFO	cache/context_recovery.go:170	node state	{"nodeName": "lab5", "nodeState": "New"}
+2022-06-18T10:13:25.972Z	INFO	cache/context_recovery.go:185	node state	{"nodeName": "lab", "nodeState": "New"}
+2022-06-18T10:13:25.972Z	INFO	cache/context_recovery.go:185	node state	{"nodeName": "lab5", "nodeState": "New"}
+2022-06-18T10:13:25.972Z	INFO	cache/context_recovery.go:203	still waiting for recovering nodes	{"totalNodes": 2, "recoveredNodes": 0}
+2022-06-18T10:13:25.972Z	INFO	cache/node.go:177	node recovering	{"nodeID": "lab", "schedulable": true}
+2022-06-18T10:13:25.972Z	INFO	cache/node.go:177	node recovering	{"nodeID": "lab5", "schedulable": true}
+2022-06-18T10:13:25.972Z	INFO	scheduler/partition.go:582	adding node to partition	{"partition": "[mycluster]default", "nodeID": "lab5"}
+2022-06-18T10:13:25.972Z	INFO	objects/queue.go:1052	updating root queue max resources	{"current max": "nil resource", "new max": "map[ephemeral-storage:452221296711 hugepages-1Gi:0 hugepages-2Mi:0 memory:16548802560 pods:110 vcore:8000]"}
+2022-06-18T10:13:25.973Z	INFO	scheduler/partition.go:647	Updated available resources from added node	{"partitionName": "[mycluster]default", "nodeID": "lab5", "partitionResource": "map[ephemeral-storage:452221296711 hugepages-1Gi:0 hugepages-2Mi:0 memory:16548802560 pods:110 vcore:8000]"}
+2022-06-18T10:13:25.973Z	INFO	scheduler/context.go:625	successfully added node	{"nodeID": "lab5", "partition": "[mycluster]default"}
+2022-06-18T10:13:25.973Z	INFO	scheduler/partition.go:582	adding node to partition	{"partition": "[mycluster]default", "nodeID": "lab"}
+2022-06-18T10:13:25.973Z	INFO	objects/queue.go:1052	updating root queue max resources	{"current max": "map[ephemeral-storage:452221296711 hugepages-1Gi:0 hugepages-2Mi:0 memory:16548802560 pods:110 vcore:8000]", "new max": "map[ephemeral-storage:557532871372 hugepages-1Gi:0 hugepages-2Mi:0 memory:33159262208 pods:220 vcore:16000]"}
+2022-06-18T10:13:25.973Z	INFO	scheduler/partition.go:647	Updated available resources from added node	{"partitionName": "[mycluster]default", "nodeID": "lab", "partitionResource": "map[ephemeral-storage:557532871372 hugepages-1Gi:0 hugepages-2Mi:0 memory:33159262208 pods:220 vcore:16000]"}
+2022-06-18T10:13:25.973Z	INFO	scheduler/context.go:625	successfully added node	{"nodeID": "lab", "partition": "[mycluster]default"}
+2022-06-18T10:13:26.973Z	INFO	cache/context_recovery.go:185	node state	{"nodeName": "lab", "nodeState": "Healthy"}
+2022-06-18T10:13:26.973Z	INFO	cache/context_recovery.go:185	node state	{"nodeName": "lab5", "nodeState": "Healthy"}
+2022-06-18T10:13:26.973Z	INFO	cache/context_recovery.go:199	nodes recovery is successful	{"recoveredNodes": 2}
+2022-06-18T10:13:26.973Z	INFO	shim/scheduler.go:226	scheduler recovery succeed
+2022-06-18T10:13:26.973Z	INFO	shim/scheduler.go:356	No outstanding apps found for a while	{"timeout": "2m0s"}
+2022-06-18T10:13:26.973Z	INFO	cache/context.go:322	trigger scheduler configuration reloading
+2022-06-18T10:13:26.973Z	INFO	cache/nodes.go:238	scheduler node event 	{"name": "lab", "current state ": "New", "transition to ": "RecoverNode"}
+2022-06-18T10:13:26.973Z	INFO	cache/context.go:322	trigger scheduler configuration reloading
+2022-06-18T10:13:26.973Z	INFO	configs/configwatcher.go:148	config watcher is already running. Extending config watcher duration
+2022-06-18T10:13:26.974Z	INFO	cache/nodes.go:238	scheduler node event 	{"name": "lab5", "current state ": "New", "transition to ": "RecoverNode"}
+2022-06-18T10:13:43.068Z	INFO	cache/context.go:632	app added	{"appID": "nginx_2019_01_22_00001"}
+2022-06-18T10:13:43.068Z	INFO	cache/context.go:696	task added	{"appID": "nginx_2019_01_22_00001", "taskID": "a2a4df5b-668e-4894-8aec-f29b0f85480a", "taskState": "New"}
+2022-06-18T10:13:43.981Z	INFO	cache/application.go:461	handle app submission	{"app": "applicationID: nginx_2019_01_22_00001, queue: root.sandbox, partition: default, totalNumOfTasks: 1, currentState: Submitted", "clusterID": "mycluster"}
+2022-06-18T10:13:43.981Z	INFO	scheduler/context.go:487	enter handleRMUpdateApplicationEvent()
+2022-06-18T10:13:43.981Z	INFO	scheduler/context.go:488	&{Request:new:<applicationID:"nginx_2019_01_22_00001" queueName:"root.sandbox" partitionName:"[mycluster]default" ugi:<user:"nobody" > tags:<key:"namespace" value:"default" > tags:<key:"yunikorn.apache.org/schedulingPolicyParameters" value:"gangSchedulingStyle=Hard" > tags:<key:"yunikorn.apache.org/task-groups" value:"" > gangSchedulingStyle:"Hard" > rmID:"mycluster" }
+2022-06-18T10:13:43.981Z	INFO	scheduler/partition.go:309	enter AddApplication()
+2022-06-18T10:13:43.981Z	INFO	scheduler/partition.go:310	ApplicationID: nginx_2019_01_22_00001, Partition: [mycluster]default, SubmissionTime: 323032322d30362d31382031303a31333a34332e393831353436333539202b3030303020555443206d3d2b31392e303439313431303434, State: New
+2022-06-18T10:13:43.981Z	INFO	placement/placement.go:137	enter PlaceApplication()
+2022-06-18T10:13:43.981Z	INFO	placement/placement.go:138	&{name: rules:[0xc000134c80] initialised:true queueFn:0x993ee0 RWMutex:{w:{state:0 sema:0} writerSem:0 readerSem:0 readerCount:0 readerWait:0}}
+2022-06-18T10:13:43.981Z	INFO	placement/placement.go:149	Executing rule for placing application	{"ruleName": "tag", "application": "nginx_2019_01_22_00001"}
+2022-06-18T10:13:43.981Z	INFO	placement/tag_rule.go:61	enter placeApplication()
+2022-06-18T10:13:43.981Z	INFO	placement/tag_rule.go:108	Tag rule intermediate result	{"application": "nginx_2019_01_22_00001", "queue": "root.default"}
+2022-06-18T10:13:43.981Z	INFO	placement/tag_rule.go:117	Tag rule application placed	{"application": "nginx_2019_01_22_00001", "queue": "root.default"}
+2022-06-18T10:13:43.981Z	INFO	placement/placement.go:208	Rule result for placing application	{"application": "nginx_2019_01_22_00001", "queueName": "root.default"}
+2022-06-18T10:13:43.981Z	INFO	objects/queue.go:150	dynamic queue added to scheduler	{"queueName": "root.default"}
+2022-06-18T10:13:43.981Z	INFO	scheduler/context.go:542	Added application to partition	{"applicationID": "nginx_2019_01_22_00001", "partitionName": "[mycluster]default", "requested queue": "root.sandbox", "placed queue": "root.default"}
+2022-06-18T10:13:43.981Z	INFO	callback/scheduler_callback.go:114	Accepting app	{"appID": "nginx_2019_01_22_00001"}
+2022-06-18T10:13:44.982Z	INFO	cache/application.go:557	Skip the reservation stage	{"appID": "nginx_2019_01_22_00001"}
+2022-06-18T10:13:45.982Z	INFO	rmproxy/rmproxy.go:309	enter UpdateAllocation()
+2022-06-18T10:13:45.982Z	INFO	rmproxy/rmproxy.go:310	asks:<allocationKey:"a2a4df5b-668e-4894-8aec-f29b0f85480a" applicationID:"nginx_2019_01_22_00001" resourceAsk:<resources:<key:"memory" value:<value:1024000000 > > resources:<key:"vcore" value:<value:500 > > > maxAllocations:1 tags:<key:"kubernetes.io/label/app" value:"nginx" > tags:<key:"kubernetes.io/label/applicationId" value:"nginx_2019_01_22_00001" > tags:<key:"kubernetes.io/label/pod-template-hash" value:"758d456f6b" > tags:<key:"kubernetes.io/label/queue" value:"root.sandbox" > tags:<key:"kubernetes.io/meta/namespace" value:"default" > tags:<key:"kubernetes.io/meta/podName" value:"nginx-758d456f6b-ccgtb" > > rmID:"mycluster" 
+2022-06-18T10:13:45.982Z	INFO	scheduler/context.go:731	enter handleRMUpdateAllocationEvent()
+2022-06-18T10:13:45.983Z	INFO	scheduler/context.go:732	&{Request:asks:<allocationKey:"a2a4df5b-668e-4894-8aec-f29b0f85480a" applicationID:"nginx_2019_01_22_00001" partitionName:"[mycluster]default" resourceAsk:<resources:<key:"memory" value:<value:1024000000 > > resources:<key:"vcore" value:<value:500 > > > maxAllocations:1 tags:<key:"kubernetes.io/label/app" value:"nginx" > tags:<key:"kubernetes.io/label/applicationId" value:"nginx_2019_01_22_00001" > tags:<key:"kubernetes.io/label/pod-template-hash" value:"758d456f6b" > tags:<key:"kubernetes.io/label/queue" value:"root.sandbox" > tags:<key:"kubernetes.io/meta/namespace" value:"default" > tags:<key:"kubernetes.io/meta/podName" value:"nginx-758d456f6b-ccgtb" > > rmID:"mycluster" }
+2022-06-18T10:13:45.983Z	INFO	scheduler/context.go:750	enter processAsks()
+2022-06-18T10:13:45.983Z	INFO	scheduler/context.go:751	asks:<allocationKey:"a2a4df5b-668e-4894-8aec-f29b0f85480a" applicationID:"nginx_2019_01_22_00001" partitionName:"[mycluster]default" resourceAsk:<resources:<key:"memory" value:<value:1024000000 > > resources:<key:"vcore" value:<value:500 > > > maxAllocations:1 tags:<key:"kubernetes.io/label/app" value:"nginx" > tags:<key:"kubernetes.io/label/applicationId" value:"nginx_2019_01_22_00001" > tags:<key:"kubernetes.io/label/pod-template-hash" value:"758d456f6b" > tags:<key:"kubernetes.io/label/queue" value:"root.sandbox" > tags:<key:"kubernetes.io/meta/namespace" value:"default" > tags:<key:"kubernetes.io/meta/podName" value:"nginx-758d456f6b-ccgtb" > > rmID:"mycluster" 
+2022-06-18T10:13:45.983Z	INFO	scheduler/context.go:777	map[kubernetes.io/label/app:nginx kubernetes.io/label/applicationId:nginx_2019_01_22_00001 kubernetes.io/label/pod-template-hash:758d456f6b kubernetes.io/label/queue:root.sandbox kubernetes.io/meta/namespace:default kubernetes.io/meta/podName:nginx-758d456f6b-ccgtb]
+2022-06-18T10:13:45.983Z	INFO	scheduler/context.go:780	{"kubernetes.io/label/app":"nginx","kubernetes.io/label/applicationId":"nginx_2019_01_22_00001","kubernetes.io/label/pod-template-hash":"758d456f6b","kubernetes.io/label/queue":"root.sandbox","kubernetes.io/meta/namespace":"default","kubernetes.io/meta/podName":"nginx-758d456f6b-ccgtb"}
+2022-06-18T10:13:45.983Z	INFO	scheduler/partition.go:1433	enter addAllocationAsk()
+2022-06-18T10:13:45.983Z	INFO	objects/application_state.go:129	Application state transition	{"appID": "nginx_2019_01_22_00001", "source": "New", "destination": "Accepted", "event": "runApplication"}
+2022-06-18T10:13:45.983Z	INFO	objects/application.go:585	Ask added successfully to application	{"appID": "nginx_2019_01_22_00001", "ask": "a2a4df5b-668e-4894-8aec-f29b0f85480a", "placeholder": false, "pendingDelta": "map[memory:2048000000 vcore:1000]"}
+2022-06-18T10:13:45.983Z	INFO	objects/application_state.go:129	Application state transition	{"appID": "nginx_2019_01_22_00001", "source": "Accepted", "destination": "Starting", "event": "runApplication"}
+2022-06-18T10:13:45.983Z	INFO	scheduler/partition.go:931	scheduler allocation processed	{"appID": "nginx_2019_01_22_00001", "allocationKey": "a2a4df5b-668e-4894-8aec-f29b0f85480a", "UUID": "303b7808-05e1-45a7-a4bd-c045b85bd40f", "allocatedResource": "map[memory:2048000000 vcore:1000]", "placeholder": false, "targetNode": "lab5"}
+2022-06-18T10:13:45.983Z	INFO	scheduler/context.go:857	enter notifyRMNewAllocation()
+2022-06-18T10:13:45.983Z	INFO	scheduler/context.go:858	ApplicationID=nginx_2019_01_22_00001, UUID=303b7808-05e1-45a7-a4bd-c045b85bd40f, AllocationKey=a2a4df5b-668e-4894-8aec-f29b0f85480a, Node=lab5, Result=Allocated
+2022-06-18T10:13:45.983Z	INFO	scheduler/context.go:859	mycluster
+2022-06-18T10:13:45.983Z	INFO	cache/context.go:359	Binding Pod Volumes skipped: all volumes already bound	{"podName": "nginx-758d456f6b-ccgtb"}
+2022-06-18T10:13:45.983Z	INFO	client/kubeclient.go:84	bind pod to node	{"podName": "nginx-758d456f6b-ccgtb", "podUID": "a2a4df5b-668e-4894-8aec-f29b0f85480a", "nodeID": "lab5"}
+2022-06-18T10:13:45.989Z	INFO	cache/task.go:418	successfully bound pod	{"podName": "nginx-758d456f6b-ccgtb"}
+2022-06-18T10:13:52.332Z	INFO	general/general.go:321	delete pod	{"appType": "general", "namespace": "default", "podName": "nginx-758d456f6b-ccgtb", "podUID": "a2a4df5b-668e-4894-8aec-f29b0f85480a"}
+2022-06-18T10:13:52.332Z	INFO	cache/task.go:563	releasing allocations	{"numOfAsksToRelease": 0, "numOfAllocationsToRelease": 1}
+2022-06-18T10:13:52.332Z	INFO	rmproxy/rmproxy.go:309	enter UpdateAllocation()
+2022-06-18T10:13:52.333Z	INFO	rmproxy/rmproxy.go:310	releases:<allocationsToRelease:<partitionName:"default" applicationID:"nginx_2019_01_22_00001" UUID:"303b7808-05e1-45a7-a4bd-c045b85bd40f" terminationType:STOPPED_BY_RM message:"task completed" > > rmID:"mycluster" 
+2022-06-18T10:13:52.333Z	INFO	scheduler/context.go:731	enter handleRMUpdateAllocationEvent()
+2022-06-18T10:13:52.333Z	INFO	scheduler/context.go:732	&{Request:releases:<allocationsToRelease:<partitionName:"[mycluster]default" applicationID:"nginx_2019_01_22_00001" UUID:"303b7808-05e1-45a7-a4bd-c045b85bd40f" terminationType:STOPPED_BY_RM message:"task completed" > > rmID:"mycluster" }
+2022-06-18T10:13:52.333Z	INFO	scheduler/partition.go:1303	removing allocation from application	{"appID": "nginx_2019_01_22_00001", "allocationId": "303b7808-05e1-45a7-a4bd-c045b85bd40f", "terminationType": "STOPPED_BY_RM"}
+2022-06-18T10:13:52.333Z	INFO	objects/application_state.go:129	Application state transition	{"appID": "nginx_2019_01_22_00001", "source": "Starting", "destination": "Completing", "event": "completeApplication"}
+2022-06-18T10:13:52.333Z	INFO	scheduler/partition.go:1356	removing allocation from node	{"nodeID": "lab5", "allocationId": "303b7808-05e1-45a7-a4bd-c045b85bd40f"}
+2022-06-18T10:14:03.295Z	INFO	cache/context.go:696	task added	{"appID": "nginx_2019_01_22_00001", "taskID": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93", "taskState": "New"}
+2022-06-18T10:14:03.992Z	INFO	rmproxy/rmproxy.go:309	enter UpdateAllocation()
+2022-06-18T10:14:03.993Z	INFO	rmproxy/rmproxy.go:310	asks:<allocationKey:"fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93" applicationID:"nginx_2019_01_22_00001" resourceAsk:<resources:<key:"memory" value:<value:1024000000 > > resources:<key:"vcore" value:<value:500 > > > maxAllocations:1 tags:<key:"kubernetes.io/label/app" value:"nginx" > tags:<key:"kubernetes.io/label/applicationId" value:"nginx_2019_01_22_00001" > tags:<key:"kubernetes.io/label/pod-template-hash" value:"758d456f6b" > tags:<key:"kubernetes.io/label/queue" value:"root.sandbox" > tags:<key:"kubernetes.io/meta/namespace" value:"yunikorn" > tags:<key:"kubernetes.io/meta/podName" value:"nginx-758d456f6b-xf4d7" > > rmID:"mycluster" 
+2022-06-18T10:14:03.993Z	INFO	scheduler/context.go:731	enter handleRMUpdateAllocationEvent()
+2022-06-18T10:14:03.993Z	INFO	scheduler/context.go:732	&{Request:asks:<allocationKey:"fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93" applicationID:"nginx_2019_01_22_00001" partitionName:"[mycluster]default" resourceAsk:<resources:<key:"memory" value:<value:1024000000 > > resources:<key:"vcore" value:<value:500 > > > maxAllocations:1 tags:<key:"kubernetes.io/label/app" value:"nginx" > tags:<key:"kubernetes.io/label/applicationId" value:"nginx_2019_01_22_00001" > tags:<key:"kubernetes.io/label/pod-template-hash" value:"758d456f6b" > tags:<key:"kubernetes.io/label/queue" value:"root.sandbox" > tags:<key:"kubernetes.io/meta/namespace" value:"yunikorn" > tags:<key:"kubernetes.io/meta/podName" value:"nginx-758d456f6b-xf4d7" > > rmID:"mycluster" }
+2022-06-18T10:14:03.993Z	INFO	scheduler/context.go:750	enter processAsks()
+2022-06-18T10:14:03.993Z	INFO	scheduler/context.go:751	asks:<allocationKey:"fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93" applicationID:"nginx_2019_01_22_00001" partitionName:"[mycluster]default" resourceAsk:<resources:<key:"memory" value:<value:1024000000 > > resources:<key:"vcore" value:<value:500 > > > maxAllocations:1 tags:<key:"kubernetes.io/label/app" value:"nginx" > tags:<key:"kubernetes.io/label/applicationId" value:"nginx_2019_01_22_00001" > tags:<key:"kubernetes.io/label/pod-template-hash" value:"758d456f6b" > tags:<key:"kubernetes.io/label/queue" value:"root.sandbox" > tags:<key:"kubernetes.io/meta/namespace" value:"yunikorn" > tags:<key:"kubernetes.io/meta/podName" value:"nginx-758d456f6b-xf4d7" > > rmID:"mycluster" 
+2022-06-18T10:14:03.993Z	INFO	scheduler/context.go:777	map[kubernetes.io/label/app:nginx kubernetes.io/label/applicationId:nginx_2019_01_22_00001 kubernetes.io/label/pod-template-hash:758d456f6b kubernetes.io/label/queue:root.sandbox kubernetes.io/meta/namespace:yunikorn kubernetes.io/meta/podName:nginx-758d456f6b-xf4d7]
+2022-06-18T10:14:03.993Z	INFO	scheduler/context.go:780	{"kubernetes.io/label/app":"nginx","kubernetes.io/label/applicationId":"nginx_2019_01_22_00001","kubernetes.io/label/pod-template-hash":"758d456f6b","kubernetes.io/label/queue":"root.sandbox","kubernetes.io/meta/namespace":"yunikorn","kubernetes.io/meta/podName":"nginx-758d456f6b-xf4d7"}
+2022-06-18T10:14:03.993Z	INFO	scheduler/partition.go:1433	enter addAllocationAsk()
+2022-06-18T10:14:03.993Z	INFO	objects/application_state.go:129	Application state transition	{"appID": "nginx_2019_01_22_00001", "source": "Completing", "destination": "Running", "event": "runApplication"}
+2022-06-18T10:14:03.993Z	INFO	objects/application.go:585	Ask added successfully to application	{"appID": "nginx_2019_01_22_00001", "ask": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93", "placeholder": false, "pendingDelta": "map[memory:2048000000 vcore:1000]"}
+2022-06-18T10:14:03.993Z	INFO	scheduler/partition.go:931	scheduler allocation processed	{"appID": "nginx_2019_01_22_00001", "allocationKey": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93", "UUID": "1a4f17fa-a528-461c-894b-3ace46d3cc4e", "allocatedResource": "map[memory:2048000000 vcore:1000]", "placeholder": false, "targetNode": "lab5"}
+2022-06-18T10:14:03.993Z	INFO	scheduler/context.go:857	enter notifyRMNewAllocation()
+2022-06-18T10:14:03.993Z	INFO	scheduler/context.go:858	ApplicationID=nginx_2019_01_22_00001, UUID=1a4f17fa-a528-461c-894b-3ace46d3cc4e, AllocationKey=fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93, Node=lab5, Result=Allocated
+2022-06-18T10:14:03.993Z	INFO	scheduler/context.go:859	mycluster
+2022-06-18T10:14:03.993Z	INFO	cache/context.go:359	Binding Pod Volumes skipped: all volumes already bound	{"podName": "nginx-758d456f6b-xf4d7"}
+2022-06-18T10:14:03.993Z	INFO	client/kubeclient.go:84	bind pod to node	{"podName": "nginx-758d456f6b-xf4d7", "podUID": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93", "nodeID": "lab5"}
+2022-06-18T10:14:03.996Z	INFO	cache/task.go:418	successfully bound pod	{"podName": "nginx-758d456f6b-xf4d7"}

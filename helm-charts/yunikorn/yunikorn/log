@@ -1,0 +1,678 @@
+2022-06-18T10:13:24.943Z	INFO	log/logger.go:89	scheduler configuration, pretty print	{"configs": "{\n \"schedulerName\": \"yunikorn\",\n \"clusterId\": \"mycluster\",\n \"clusterVersion\": \"latest\",\n \"policyGroup\": \"queues\",\n \"schedulingIntervalSecond\": 1000000000,\n \"absoluteKubeConfigFilePath\": \"\",\n \"loggingLevel\": -1,\n \"logEncoding\": \"console\",\n \"logFilePath\": \"\",\n \"volumeBindTimeout\": 10000000000,\n \"testMode\": false,\n \"eventChannelCapacity\": 1048576,\n \"dispatchTimeout\": 300000000000,\n \"kubeQPS\": 1000,\n \"kubeBurst\": 1000,\n \"predicates\": \"\",\n \"operatorPlugins\": \"general\",\n \"enableConfigHotRefresh\": true,\n \"disableGangScheduling\": false,\n \"userLabelKey\": \"\",\n \"placeHolderImage\": \"k8s.gcr.io/pause\"\n}"}
+2022-06-18T10:13:24.943Z	INFO	shim/main.go:42	Build info	{"version": "latest", "date": "2022-06-18T18:05:10+0800"}
+2022-06-18T10:13:24.943Z	INFO	shim/main.go:43	starting scheduler	{"name": "yunikorn"}
+2022-06-18T10:13:24.943Z	INFO	shim/main.go:45	test info by me
+2022-06-18T10:13:24.943Z	INFO	log/logger.go:60	Using an already initialized logger
+2022-06-18T10:13:24.943Z	INFO	entrypoint/entrypoint.go:43	ServiceContext start all services
+2022-06-18T10:13:24.950Z	INFO	entrypoint/entrypoint.go:89	ServiceContext start scheduling services
+2022-06-18T10:13:24.950Z	DEBUG	scheduler/health_checker.go:87	Scheduler is healthy	{"health check values": [{"Name":"Scheduling errors","Succeeded":true,"Description":"Check for scheduling error entries in metrics","DiagnosisMessage":"There were 0 scheduling errors logged in the metrics"},{"Name":"Failed nodes","Succeeded":true,"Description":"Check for failed nodes entries in metrics","DiagnosisMessage":"There were 0 failed nodes logged in the metrics"},{"Name":"Negative resources","Succeeded":true,"Description":"Check for negative resources in the partitions","DiagnosisMessage":"Partitions with negative resources: []"},{"Name":"Negative resources","Succeeded":true,"Description":"Check for negative resources in the nodes","DiagnosisMessage":"Nodes with negative resources: []"},{"Name":"Consistency of data","Succeeded":true,"Description":"Check if a node's allocated resource <= total resource of the node","DiagnosisMessage":"Nodes with inconsistent data: []"},{"Name":"Consistency of data","Succeeded":true,"Description":"Check if total partition resource == sum of the node resources from the partition","DiagnosisMessage":"Partitions with inconsistent data: []"},{"Name":"Consistency of data","Succeeded":true,"Description":"Check if node total resource = allocated resource + occupied resource + available resource","DiagnosisMessage":"Nodes with inconsistent data: []"},{"Name":"Consistency of data","Succeeded":true,"Description":"Check if node capacity >= allocated resources on the node","DiagnosisMessage":"Nodes with inconsistent data: []"},{"Name":"Reservation check","Succeeded":true,"Description":"Check the reservation nr compared to the number of nodes","DiagnosisMessage":"Reservation/node nr ratio: []"},{"Name":"Orphan allocation on node check","Succeeded":true,"Description":"Check if there are orphan allocations on the nodes","DiagnosisMessage":"Orphan allocations: []"},{"Name":"Orphan allocation on app check","Succeeded":true,"Description":"Check if there are orphan allocations on the applications","DiagnosisMessage":"OrphanAllocations: []"}]}
+2022-06-18T10:13:24.951Z	INFO	entrypoint/entrypoint.go:106	creating InternalMetricsHistory
+2022-06-18T10:13:24.951Z	INFO	entrypoint/entrypoint.go:113	ServiceContext start web application service
+2022-06-18T10:13:24.952Z	INFO	webservice/webservice.go:71	web-app started	{"port": 9080}
+2022-06-18T10:13:24.952Z	INFO	shim/main.go:53	test by turtlegod
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "PreFilter", "pluginName": "NodePorts"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "PreFilter", "pluginName": "PodTopologySpread"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "PreFilter", "pluginName": "InterPodAffinity"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "PreFilter", "pluginName": "NodeResourcesFit"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "PreFilter", "pluginName": "NodePorts"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "PreFilter", "pluginName": "PodTopologySpread"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "PreFilter", "pluginName": "InterPodAffinity"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "PreFilter", "pluginName": "VolumeBinding"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "NodeUnschedulable"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "NodeName"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "TaintToleration"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "NodeAffinity"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "NodePorts"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "PodTopologySpread"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "InterPodAffinity"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "NodeUnschedulable"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "NodeName"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "TaintToleration"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "NodeAffinity"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "NodePorts"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "NodeResourcesFit"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "VolumeRestrictions"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "EBSLimits"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "GCEPDLimits"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "NodeVolumeLimits"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "AzureDiskLimits"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "VolumeBinding"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "VolumeZone"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "PodTopologySpread"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:343	adding plugin	{"phase": "Filter", "pluginName": "InterPodAffinity"}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:362	plugin config created	{"pluginName": "NodePorts", "cfg": null}
+2022-06-18T10:13:24.954Z	DEBUG	predicates/predicate_manager.go:370	plugin created	{"pluginName": "NodePorts"}
+2022-06-18T10:13:24.955Z	DEBUG	predicates/predicate_manager.go:362	plugin config created	{"pluginName": "PodTopologySpread", "cfg": "&TypeMeta{Kind:,APIVersion:,}"}
+2022-06-18T10:13:24.955Z	DEBUG	predicates/predicate_manager.go:370	plugin created	{"pluginName": "PodTopologySpread"}
+2022-06-18T10:13:24.955Z	DEBUG	predicates/predicate_manager.go:362	plugin config created	{"pluginName": "InterPodAffinity", "cfg": "&TypeMeta{Kind:,APIVersion:,}"}
+2022-06-18T10:13:24.955Z	DEBUG	predicates/predicate_manager.go:370	plugin created	{"pluginName": "InterPodAffinity"}
+2022-06-18T10:13:24.955Z	DEBUG	predicates/predicate_manager.go:362	plugin config created	{"pluginName": "NodeResourcesFit", "cfg": "&TypeMeta{Kind:,APIVersion:,}"}
+2022-06-18T10:13:24.955Z	DEBUG	predicates/predicate_manager.go:370	plugin created	{"pluginName": "NodeResourcesFit"}
+2022-06-18T10:13:24.955Z	DEBUG	predicates/predicate_manager.go:362	plugin config created	{"pluginName": "VolumeBinding", "cfg": "&TypeMeta{Kind:,APIVersion:,}"}
+2022-06-18T10:13:24.955Z	DEBUG	predicates/predicate_manager.go:370	plugin created	{"pluginName": "VolumeBinding"}
+2022-06-18T10:13:24.955Z	DEBUG	predicates/predicate_manager.go:362	plugin config created	{"pluginName": "NodeUnschedulable", "cfg": null}
+2022-06-18T10:13:24.955Z	DEBUG	predicates/predicate_manager.go:370	plugin created	{"pluginName": "NodeUnschedulable"}
+2022-06-18T10:13:24.955Z	DEBUG	predicates/predicate_manager.go:362	plugin config created	{"pluginName": "NodeName", "cfg": null}
+2022-06-18T10:13:24.955Z	DEBUG	predicates/predicate_manager.go:370	plugin created	{"pluginName": "NodeName"}
+2022-06-18T10:13:24.955Z	DEBUG	predicates/predicate_manager.go:362	plugin config created	{"pluginName": "TaintToleration", "cfg": null}
+2022-06-18T10:13:24.955Z	DEBUG	predicates/predicate_manager.go:370	plugin created	{"pluginName": "TaintToleration"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:362	plugin config created	{"pluginName": "NodeAffinity", "cfg": "&TypeMeta{Kind:,APIVersion:,}"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:370	plugin created	{"pluginName": "NodeAffinity"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:362	plugin config created	{"pluginName": "VolumeRestrictions", "cfg": null}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:370	plugin created	{"pluginName": "VolumeRestrictions"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:362	plugin config created	{"pluginName": "EBSLimits", "cfg": null}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:370	plugin created	{"pluginName": "EBSLimits"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:362	plugin config created	{"pluginName": "GCEPDLimits", "cfg": null}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:370	plugin created	{"pluginName": "GCEPDLimits"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:362	plugin config created	{"pluginName": "NodeVolumeLimits", "cfg": null}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:370	plugin created	{"pluginName": "NodeVolumeLimits"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:362	plugin config created	{"pluginName": "AzureDiskLimits", "cfg": null}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:370	plugin created	{"pluginName": "AzureDiskLimits"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:362	plugin config created	{"pluginName": "VolumeZone", "cfg": null}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:370	plugin created	{"pluginName": "VolumeZone"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:269	Registered reservation PreFilter plugin	{"pluginName": "NodePorts"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:269	Registered reservation PreFilter plugin	{"pluginName": "PodTopologySpread"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:269	Registered reservation PreFilter plugin	{"pluginName": "InterPodAffinity"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:286	Registered allocation PreFilter plugin	{"pluginName": "NodeResourcesFit"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:286	Registered allocation PreFilter plugin	{"pluginName": "NodePorts"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:286	Registered allocation PreFilter plugin	{"pluginName": "PodTopologySpread"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:286	Registered allocation PreFilter plugin	{"pluginName": "InterPodAffinity"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:286	Registered allocation PreFilter plugin	{"pluginName": "VolumeBinding"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:303	Registered reservation Filter plugin	{"pluginName": "NodeUnschedulable"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:303	Registered reservation Filter plugin	{"pluginName": "NodeName"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:303	Registered reservation Filter plugin	{"pluginName": "TaintToleration"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:303	Registered reservation Filter plugin	{"pluginName": "NodeAffinity"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:303	Registered reservation Filter plugin	{"pluginName": "NodePorts"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:303	Registered reservation Filter plugin	{"pluginName": "PodTopologySpread"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:303	Registered reservation Filter plugin	{"pluginName": "InterPodAffinity"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:320	Registered allocation Filter plugin	{"pluginName": "NodeUnschedulable"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:320	Registered allocation Filter plugin	{"pluginName": "NodeName"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:320	Registered allocation Filter plugin	{"pluginName": "TaintToleration"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:320	Registered allocation Filter plugin	{"pluginName": "NodeAffinity"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:320	Registered allocation Filter plugin	{"pluginName": "NodePorts"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:320	Registered allocation Filter plugin	{"pluginName": "NodeResourcesFit"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:320	Registered allocation Filter plugin	{"pluginName": "VolumeRestrictions"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:320	Registered allocation Filter plugin	{"pluginName": "EBSLimits"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:320	Registered allocation Filter plugin	{"pluginName": "GCEPDLimits"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:320	Registered allocation Filter plugin	{"pluginName": "NodeVolumeLimits"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:320	Registered allocation Filter plugin	{"pluginName": "AzureDiskLimits"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:320	Registered allocation Filter plugin	{"pluginName": "VolumeBinding"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:320	Registered allocation Filter plugin	{"pluginName": "VolumeZone"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:320	Registered allocation Filter plugin	{"pluginName": "PodTopologySpread"}
+2022-06-18T10:13:24.956Z	DEBUG	predicates/predicate_manager.go:320	Registered allocation Filter plugin	{"pluginName": "InterPodAffinity"}
+2022-06-18T10:13:24.956Z	INFO	appmgmt/appmgmt.go:50	Initializing new AppMgmt service
+2022-06-18T10:13:24.956Z	INFO	appmgmt/appmgmt.go:53	Registering Spark operator with the AppMgmt service
+2022-06-18T10:13:24.956Z	INFO	appmgmt/appmgmt.go:83	registering app management service	{"serviceName": "general"}
+2022-06-18T10:13:24.956Z	INFO	appmgmt/appmgmt.go:87	skip registering app management service	{"serviceName": "spark-k8s-operator"}
+2022-06-18T10:13:24.956Z	INFO	appmgmt/appmgmt.go:87	skip registering app management service	{"serviceName": "yunikorn-app"}
+2022-06-18T10:13:24.957Z	INFO	dispatcher/dispatcher.go:78	Init dispatcher	{"EventChannelCapacity": 1048576, "AsyncDispatchLimit": 104857, "DispatchTimeoutInSeconds": 300}
+2022-06-18T10:13:24.957Z	WARN	appmgmt/appmgmt.go:133	App manager is not registered	{"app manager name": "yunikorn-app"}
+2022-06-18T10:13:24.957Z	INFO	dispatcher/dispatcher.go:181	starting the dispatcher
+2022-06-18T10:13:24.957Z	INFO	cache/placeholder_manager.go:144	starting the PlaceholderManager
+2022-06-18T10:13:25.951Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:25.958Z	INFO	appmgmt/appmgmt.go:103	starting app management service	{"serviceName": "general"}
+2022-06-18T10:13:25.958Z	INFO	appmgmt/appmgmt.go:112	app management service started	{"serviceName": "general"}
+2022-06-18T10:13:25.958Z	DEBUG	shim/scheduler.go:333	scheduler shim state transition	{"source": "New", "destination": "Registering", "event": "RegisterScheduler"}
+2022-06-18T10:13:25.958Z	INFO	shim/scheduler.go:258	register RM to the scheduler	{"clusterID": "mycluster", "clusterVersion": "latest", "policyGroup": "queues", "buildInfo": {"buildDate":"2022-06-18T18:05:10+0800","buildVersion":"latest","isPluginVersion":"false"}}
+2022-06-18T10:13:25.958Z	DEBUG	scheduler/scheduler.go:106	enqueued event	{"eventType": "*rmevent.RMRegistrationEvent", "event": {"Registration":{"rmID":"mycluster","version":"latest","policyGroup":"queues","buildInfo":{"buildDate":"2022-06-18T18:05:10+0800","buildVersion":"latest","isPluginVersion":"false"}}}, "currentQueueSize": 0}
+2022-06-18T10:13:25.958Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:25.958Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:25.958Z	INFO	scheduler/context.go:364	added partitions	{"partitionName": "[mycluster]default"}
+2022-06-18T10:13:25.958Z	INFO	security/acl.go:63	user list is wildcard, allowing all access
+2022-06-18T10:13:25.958Z	INFO	objects/queue.go:117	configured queue added to scheduler	{"queueName": "root"}
+2022-06-18T10:13:25.958Z	INFO	scheduler/partition.go:122	root queue added	{"partitionName": "[mycluster]default", "rmID": "mycluster"}
+2022-06-18T10:13:25.958Z	INFO	placement/placement.go:89	Building new rule list for placement manager
+2022-06-18T10:13:25.958Z	DEBUG	placement/filter.go:181	Filter creation passed	{"allow": true, "empty": true, "userList": {}, "groupList": {}, "userFilter": "nil", "groupFilter": "nil"}
+2022-06-18T10:13:25.958Z	DEBUG	placement/rule.go:108	New rule created	{"ruleConf": {"Name":"tag","Create":true,"Filter":{"Type":""},"Value":"namespace"}}
+2022-06-18T10:13:25.958Z	INFO	placement/placement.go:101	Activated rule set in placement manager
+2022-06-18T10:13:25.958Z	DEBUG	placement/placement.go:107	rule set	{"ruleNumber": 0, "ruleName": "tag"}
+2022-06-18T10:13:25.958Z	INFO	security/usergroup.go:79	creating UserGroupCache without resolver
+2022-06-18T10:13:25.958Z	INFO	security/usergroup.go:83	starting UserGroupCache cleaner	{"cleanerInterval": "1m0s"}
+2022-06-18T10:13:25.958Z	INFO	scheduler/partition.go:150	NodeSorting policy set from config	{"policyName": "fair"}
+2022-06-18T10:13:25.958Z	DEBUG	objects/nodesorting.go:140	new node sorting policy added	{"type": "fair", "resourceWeights": {"memory":1,"vcore":1}}
+2022-06-18T10:13:25.958Z	INFO	scheduler/partition_manager.go:63	starting partition manager	{"partition": "[mycluster]default", "cleanRootInterval": "10s"}
+2022-06-18T10:13:25.958Z	INFO	plugins/plugins.go:36	register scheduler plugin: ResourceManagerCallback
+2022-06-18T10:13:25.958Z	DEBUG	shim/scheduler.go:333	scheduler shim state transition	{"source": "Registering", "destination": "Registered", "event": "RegisterSchedulerSucceed"}
+2022-06-18T10:13:25.958Z	DEBUG	shim/scheduler.go:333	scheduler shim state transition	{"source": "Registered", "destination": "Recovering", "event": "RecoverScheduler"}
+2022-06-18T10:13:25.958Z	INFO	shim/scheduler.go:192	recovering scheduler states
+2022-06-18T10:13:25.958Z	INFO	appmgmt/appmgmt_recovery.go:46	Starting app recovery
+2022-06-18T10:13:25.958Z	INFO	general/general.go:335	Retrieving pod list
+2022-06-18T10:13:25.958Z	INFO	general/general.go:341	Pod list retrieved from api server	{"nr of pods": 13}
+2022-06-18T10:13:25.959Z	DEBUG	general/general.go:347	Looking at pod for recovery candidates	{"podNamespace": "yunikorn", "podName": "yunikorn-scheduler-75ddd45486-mbxm7"}
+2022-06-18T10:13:25.959Z	DEBUG	general/general.go:347	Looking at pod for recovery candidates	{"podNamespace": "yunikorn", "podName": "yunikorn-admission-controller-647c557786-xj5h4"}
+2022-06-18T10:13:25.959Z	DEBUG	general/general.go:347	Looking at pod for recovery candidates	{"podNamespace": "kube-system", "podName": "kube-controller-manager-lab"}
+2022-06-18T10:13:25.959Z	DEBUG	general/general.go:347	Looking at pod for recovery candidates	{"podNamespace": "kube-system", "podName": "kube-proxy-55b7j"}
+2022-06-18T10:13:25.959Z	DEBUG	general/general.go:347	Looking at pod for recovery candidates	{"podNamespace": "kube-system", "podName": "kube-scheduler-lab"}
+2022-06-18T10:13:25.959Z	DEBUG	general/general.go:347	Looking at pod for recovery candidates	{"podNamespace": "kube-system", "podName": "weave-net-g4dwg"}
+2022-06-18T10:13:25.959Z	DEBUG	general/general.go:347	Looking at pod for recovery candidates	{"podNamespace": "kube-system", "podName": "kube-apiserver-lab"}
+2022-06-18T10:13:25.959Z	DEBUG	general/general.go:347	Looking at pod for recovery candidates	{"podNamespace": "kube-system", "podName": "kube-proxy-trcxf"}
+2022-06-18T10:13:25.959Z	DEBUG	general/general.go:347	Looking at pod for recovery candidates	{"podNamespace": "kube-system", "podName": "coredns-64897985d-6vg6t"}
+2022-06-18T10:13:25.959Z	DEBUG	general/general.go:347	Looking at pod for recovery candidates	{"podNamespace": "kube-system", "podName": "weave-net-c7ggd"}
+2022-06-18T10:13:25.959Z	DEBUG	general/general.go:347	Looking at pod for recovery candidates	{"podNamespace": "default", "podName": "nginx-app-7c658794b9-gqmw4"}
+2022-06-18T10:13:25.959Z	DEBUG	general/general.go:347	Looking at pod for recovery candidates	{"podNamespace": "kube-system", "podName": "coredns-64897985d-jr5gb"}
+2022-06-18T10:13:25.959Z	DEBUG	general/general.go:347	Looking at pod for recovery candidates	{"podNamespace": "kube-system", "podName": "etcd-lab"}
+2022-06-18T10:13:25.959Z	INFO	general/general.go:362	Application recovery statistics	{"nr of recoverable apps": 0, "nr of total pods": 13, "nr of pods without application metadata": 0, "nr of pods to be recovered": 0}
+2022-06-18T10:13:25.959Z	INFO	cache/nodes.go:111	adding node to context	{"nodeName": "lab", "nodeLabels": "{\"beta.kubernetes.io/arch\":\"amd64\",\"beta.kubernetes.io/os\":\"linux\",\"image\":\"true\",\"kubernetes.io/arch\":\"amd64\",\"kubernetes.io/hostname\":\"lab\",\"kubernetes.io/os\":\"linux\",\"node-role.kubernetes.io/control-plane\":\"\",\"node-role.kubernetes.io/master\":\"\",\"node.kubernetes.io/exclude-from-external-load-balancers\":\"\"}", "schedulable": true}
+2022-06-18T10:13:25.959Z	INFO	cache/nodes.go:111	adding node to context	{"nodeName": "lab5", "nodeLabels": "{\"beta.kubernetes.io/arch\":\"amd64\",\"beta.kubernetes.io/os\":\"linux\",\"kubernetes.io/arch\":\"amd64\",\"kubernetes.io/hostname\":\"lab5\",\"kubernetes.io/os\":\"linux\"}", "schedulable": true}
+2022-06-18T10:13:25.969Z	DEBUG	cache/context_recovery.go:139	Adding resources for occupied pod	{"podUID": "b5c600e5-27ce-4a76-8a6d-acbe8921a7ab", "podName": "default/nginx-app-7c658794b9-gqmw4", "nodeName": "lab5", "resources": "resources:<key:\"memory\" value:<value:1000000 > > "}
+2022-06-18T10:13:25.970Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Pre)	{"nodes": 0, "pods": 0, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 0, "phases": {}}
+2022-06-18T10:13:25.970Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "nginx-app-7c658794b9-gqmw4", "podKey": "b5c600e5-27ce-4a76-8a6d-acbe8921a7ab"}
+2022-06-18T10:13:25.970Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Post)	{"nodes": 1, "pods": 1, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 1, "phases": {"Running":1}}
+2022-06-18T10:13:25.970Z	DEBUG	cache/context_recovery.go:139	Adding resources for occupied pod	{"podUID": "f23215a4-213f-48fe-b1c5-802f993c0aeb", "podName": "kube-system/coredns-64897985d-6vg6t", "nodeName": "lab", "resources": "resources:<key:\"memory\" value:<value:73400320 > > resources:<key:\"vcore\" value:<value:100 > > "}
+2022-06-18T10:13:25.970Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Pre)	{"nodes": 1, "pods": 1, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 1, "phases": {"Running":1}}
+2022-06-18T10:13:25.970Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "coredns-64897985d-6vg6t", "podKey": "f23215a4-213f-48fe-b1c5-802f993c0aeb"}
+2022-06-18T10:13:25.970Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Post)	{"nodes": 2, "pods": 2, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 2, "phases": {"Running":2}}
+2022-06-18T10:13:25.970Z	DEBUG	cache/context_recovery.go:139	Adding resources for occupied pod	{"podUID": "277dcacd-1836-4477-836e-9d70d0d9099b", "podName": "kube-system/coredns-64897985d-jr5gb", "nodeName": "lab", "resources": "resources:<key:\"memory\" value:<value:73400320 > > resources:<key:\"vcore\" value:<value:100 > > "}
+2022-06-18T10:13:25.970Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Pre)	{"nodes": 2, "pods": 2, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 2, "phases": {"Running":2}}
+2022-06-18T10:13:25.970Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "coredns-64897985d-jr5gb", "podKey": "277dcacd-1836-4477-836e-9d70d0d9099b"}
+2022-06-18T10:13:25.970Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Post)	{"nodes": 2, "pods": 3, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 3, "phases": {"Running":3}}
+2022-06-18T10:13:25.970Z	DEBUG	cache/context_recovery.go:139	Adding resources for occupied pod	{"podUID": "9203a203-4f62-4ae4-8049-f9161f22d93b", "podName": "kube-system/etcd-lab", "nodeName": "lab", "resources": "resources:<key:\"memory\" value:<value:104857600 > > resources:<key:\"vcore\" value:<value:100 > > "}
+2022-06-18T10:13:25.970Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Pre)	{"nodes": 2, "pods": 3, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 3, "phases": {"Running":3}}
+2022-06-18T10:13:25.970Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "etcd-lab", "podKey": "9203a203-4f62-4ae4-8049-f9161f22d93b"}
+2022-06-18T10:13:25.970Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Post)	{"nodes": 2, "pods": 4, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 4, "phases": {"Running":4}}
+2022-06-18T10:13:25.970Z	DEBUG	cache/context_recovery.go:139	Adding resources for occupied pod	{"podUID": "a5930bc2-89cb-47ac-8a5a-cc9d531a880a", "podName": "kube-system/kube-apiserver-lab", "nodeName": "lab", "resources": "resources:<key:\"vcore\" value:<value:250 > > "}
+2022-06-18T10:13:25.970Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Pre)	{"nodes": 2, "pods": 4, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 4, "phases": {"Running":4}}
+2022-06-18T10:13:25.971Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "kube-apiserver-lab", "podKey": "a5930bc2-89cb-47ac-8a5a-cc9d531a880a"}
+2022-06-18T10:13:25.971Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Post)	{"nodes": 2, "pods": 5, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 5, "phases": {"Running":5}}
+2022-06-18T10:13:25.971Z	DEBUG	cache/context_recovery.go:139	Adding resources for occupied pod	{"podUID": "38d5c568-af77-42d0-8c00-7e40afdb4dae", "podName": "kube-system/kube-controller-manager-lab", "nodeName": "lab", "resources": "resources:<key:\"vcore\" value:<value:200 > > "}
+2022-06-18T10:13:25.971Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Pre)	{"nodes": 2, "pods": 5, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 5, "phases": {"Running":5}}
+2022-06-18T10:13:25.971Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "kube-controller-manager-lab", "podKey": "38d5c568-af77-42d0-8c00-7e40afdb4dae"}
+2022-06-18T10:13:25.971Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Post)	{"nodes": 2, "pods": 6, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 6, "phases": {"Running":6}}
+2022-06-18T10:13:25.971Z	DEBUG	cache/context_recovery.go:139	Adding resources for occupied pod	{"podUID": "3034552a-ef38-4f25-886e-2ac2046a6170", "podName": "kube-system/kube-proxy-55b7j", "nodeName": "lab", "resources": "resources:<key:\"memory\" value:<value:1000000 > > "}
+2022-06-18T10:13:25.971Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Pre)	{"nodes": 2, "pods": 6, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 6, "phases": {"Running":6}}
+2022-06-18T10:13:25.971Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "kube-proxy-55b7j", "podKey": "3034552a-ef38-4f25-886e-2ac2046a6170"}
+2022-06-18T10:13:25.971Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Post)	{"nodes": 2, "pods": 7, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 7, "phases": {"Running":7}}
+2022-06-18T10:13:25.971Z	DEBUG	cache/context_recovery.go:139	Adding resources for occupied pod	{"podUID": "33169f3d-14c9-4327-bc87-d4820c8ee11b", "podName": "kube-system/kube-proxy-trcxf", "nodeName": "lab5", "resources": "resources:<key:\"memory\" value:<value:1000000 > > "}
+2022-06-18T10:13:25.971Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Pre)	{"nodes": 2, "pods": 7, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 7, "phases": {"Running":7}}
+2022-06-18T10:13:25.971Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "kube-proxy-trcxf", "podKey": "33169f3d-14c9-4327-bc87-d4820c8ee11b"}
+2022-06-18T10:13:25.971Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Post)	{"nodes": 2, "pods": 8, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 8, "phases": {"Running":8}}
+2022-06-18T10:13:25.971Z	DEBUG	cache/context_recovery.go:139	Adding resources for occupied pod	{"podUID": "a0742a8a-8139-4eb8-93b1-7e321ecce6ac", "podName": "kube-system/kube-scheduler-lab", "nodeName": "lab", "resources": "resources:<key:\"vcore\" value:<value:100 > > "}
+2022-06-18T10:13:25.971Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Pre)	{"nodes": 2, "pods": 8, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 8, "phases": {"Running":8}}
+2022-06-18T10:13:25.971Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "kube-scheduler-lab", "podKey": "a0742a8a-8139-4eb8-93b1-7e321ecce6ac"}
+2022-06-18T10:13:25.971Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Post)	{"nodes": 2, "pods": 9, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 9, "phases": {"Running":9}}
+2022-06-18T10:13:25.972Z	DEBUG	cache/context_recovery.go:139	Adding resources for occupied pod	{"podUID": "0efda27b-5018-44fd-b88e-cd9e922d8969", "podName": "kube-system/weave-net-c7ggd", "nodeName": "lab5", "resources": "resources:<key:\"memory\" value:<value:209715200 > > resources:<key:\"vcore\" value:<value:100 > > "}
+2022-06-18T10:13:25.972Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Pre)	{"nodes": 2, "pods": 9, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 9, "phases": {"Running":9}}
+2022-06-18T10:13:25.972Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "weave-net-c7ggd", "podKey": "0efda27b-5018-44fd-b88e-cd9e922d8969"}
+2022-06-18T10:13:25.972Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Post)	{"nodes": 2, "pods": 10, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 10, "phases": {"Running":10}}
+2022-06-18T10:13:25.972Z	DEBUG	cache/context_recovery.go:139	Adding resources for occupied pod	{"podUID": "3a29cf25-c793-4ee3-b8c9-a42453ff2d4f", "podName": "kube-system/weave-net-g4dwg", "nodeName": "lab", "resources": "resources:<key:\"memory\" value:<value:209715200 > > resources:<key:\"vcore\" value:<value:100 > > "}
+2022-06-18T10:13:25.972Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Pre)	{"nodes": 2, "pods": 10, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 10, "phases": {"Running":10}}
+2022-06-18T10:13:25.972Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "weave-net-g4dwg", "podKey": "3a29cf25-c793-4ee3-b8c9-a42453ff2d4f"}
+2022-06-18T10:13:25.972Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Post)	{"nodes": 2, "pods": 11, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 11, "phases": {"Running":11}}
+2022-06-18T10:13:25.972Z	DEBUG	cache/context_recovery.go:139	Adding resources for occupied pod	{"podUID": "2fb626b2-7b76-4016-bdbc-f6a0432f6f64", "podName": "yunikorn/yunikorn-admission-controller-647c557786-xj5h4", "nodeName": "lab", "resources": "resources:<key:\"memory\" value:<value:524288000 > > resources:<key:\"vcore\" value:<value:100 > > "}
+2022-06-18T10:13:25.972Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Pre)	{"nodes": 2, "pods": 11, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 11, "phases": {"Running":11}}
+2022-06-18T10:13:25.972Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "yunikorn-admission-controller-647c557786-xj5h4", "podKey": "2fb626b2-7b76-4016-bdbc-f6a0432f6f64"}
+2022-06-18T10:13:25.972Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Post)	{"nodes": 2, "pods": 12, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 12, "phases": {"Running":12}}
+2022-06-18T10:13:25.972Z	DEBUG	cache/context_recovery.go:139	Adding resources for occupied pod	{"podUID": "4687fc3f-5c2b-4a42-b7e6-6b38df4f9760", "podName": "yunikorn/yunikorn-scheduler-75ddd45486-mbxm7", "nodeName": "lab", "resources": "resources:<key:\"memory\" value:<value:1178599424 > > resources:<key:\"vcore\" value:<value:300 > > "}
+2022-06-18T10:13:25.972Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Pre)	{"nodes": 2, "pods": 12, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 12, "phases": {"Running":12}}
+2022-06-18T10:13:25.972Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "yunikorn-scheduler-75ddd45486-mbxm7", "podKey": "4687fc3f-5c2b-4a42-b7e6-6b38df4f9760"}
+2022-06-18T10:13:25.972Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Post)	{"nodes": 2, "pods": 13, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 13, "phases": {"Pending":1,"Running":12}}
+2022-06-18T10:13:25.972Z	INFO	cache/node.go:120	add node occupied resource	{"nodeID": "lab5", "occupied": "resources:<key:\"memory\" value:<value:211715200 > > resources:<key:\"vcore\" value:<value:100 > > "}
+2022-06-18T10:13:25.972Z	INFO	cache/node.go:120	add node occupied resource	{"nodeID": "lab", "occupied": "resources:<key:\"memory\" value:<value:2165260864 > > resources:<key:\"vcore\" value:<value:1350 > > "}
+2022-06-18T10:13:25.972Z	INFO	cache/context_recovery.go:170	node state	{"nodeName": "lab", "nodeState": "New"}
+2022-06-18T10:13:25.972Z	INFO	cache/context_recovery.go:170	node state	{"nodeName": "lab5", "nodeState": "New"}
+2022-06-18T10:13:25.972Z	INFO	cache/context_recovery.go:185	node state	{"nodeName": "lab", "nodeState": "New"}
+2022-06-18T10:13:25.972Z	INFO	cache/context_recovery.go:185	node state	{"nodeName": "lab5", "nodeState": "New"}
+2022-06-18T10:13:25.972Z	INFO	cache/context_recovery.go:203	still waiting for recovering nodes	{"totalNodes": 2, "recoveredNodes": 0}
+2022-06-18T10:13:25.972Z	INFO	cache/node.go:177	node recovering	{"nodeID": "lab", "schedulable": true}
+2022-06-18T10:13:25.972Z	DEBUG	cache/node.go:234	shim node state transition	{"nodeID": "lab", "source": "New", "destination": "Recovering", "event": "RecoverNode"}
+2022-06-18T10:13:25.972Z	INFO	cache/node.go:177	node recovering	{"nodeID": "lab5", "schedulable": true}
+2022-06-18T10:13:25.972Z	DEBUG	cache/node.go:234	shim node state transition	{"nodeID": "lab5", "source": "New", "destination": "Recovering", "event": "RecoverNode"}
+2022-06-18T10:13:25.972Z	INFO	scheduler/partition.go:582	adding node to partition	{"partition": "[mycluster]default", "nodeID": "lab5"}
+2022-06-18T10:13:25.972Z	INFO	objects/queue.go:1052	updating root queue max resources	{"current max": "nil resource", "new max": "map[ephemeral-storage:452221296711 hugepages-1Gi:0 hugepages-2Mi:0 memory:16548802560 pods:110 vcore:8000]"}
+2022-06-18T10:13:25.973Z	INFO	scheduler/partition.go:647	Updated available resources from added node	{"partitionName": "[mycluster]default", "nodeID": "lab5", "partitionResource": "map[ephemeral-storage:452221296711 hugepages-1Gi:0 hugepages-2Mi:0 memory:16548802560 pods:110 vcore:8000]"}
+2022-06-18T10:13:25.973Z	INFO	scheduler/context.go:625	successfully added node	{"nodeID": "lab5", "partition": "[mycluster]default"}
+2022-06-18T10:13:25.972Z	DEBUG	scheduler/scheduler.go:106	enqueued event	{"eventType": "*rmevent.RMUpdateNodeEvent", "event": {"Request":{"nodes":[{"nodeID":"lab5","action":1,"attributes":{"ready":"true","si.io/hostname":"lab5","si.io/rackname":"/rack-default","si/node-partition":"[mycluster]default"},"schedulableResource":{"resources":{"ephemeral-storage":{"value":452221296711},"hugepages-1Gi":{},"hugepages-2Mi":{},"memory":{"value":16548802560},"pods":{"value":110},"vcore":{"value":8000}}},"occupiedResource":{"resources":{"memory":{"value":211715200},"vcore":{"value":100}}}}],"rmID":"mycluster"}}, "currentQueueSize": 0}
+2022-06-18T10:13:25.972Z	DEBUG	scheduler/scheduler.go:106	enqueued event	{"eventType": "*rmevent.RMUpdateNodeEvent", "event": {"Request":{"nodes":[{"nodeID":"lab","action":1,"attributes":{"ready":"true","si.io/hostname":"lab","si.io/rackname":"/rack-default","si/node-partition":"[mycluster]default"},"schedulableResource":{"resources":{"ephemeral-storage":{"value":105311574661},"hugepages-1Gi":{},"hugepages-2Mi":{},"memory":{"value":16610459648},"pods":{"value":110},"vcore":{"value":8000}}},"occupiedResource":{"resources":{"memory":{"value":2165260864},"vcore":{"value":1350}}}}],"rmID":"mycluster"}}, "currentQueueSize": 1}
+2022-06-18T10:13:25.973Z	DEBUG	rmproxy/rmproxy.go:64	enqueue event	{"eventType": "*rmevent.RMNodeUpdateEvent", "event": {"RmID":"mycluster","AcceptedNodes":[{"nodeID":"lab5"}],"RejectedNodes":[]}, "currentQueueSize": 0}
+2022-06-18T10:13:25.973Z	INFO	scheduler/partition.go:582	adding node to partition	{"partition": "[mycluster]default", "nodeID": "lab"}
+2022-06-18T10:13:25.973Z	INFO	objects/queue.go:1052	updating root queue max resources	{"current max": "map[ephemeral-storage:452221296711 hugepages-1Gi:0 hugepages-2Mi:0 memory:16548802560 pods:110 vcore:8000]", "new max": "map[ephemeral-storage:557532871372 hugepages-1Gi:0 hugepages-2Mi:0 memory:33159262208 pods:220 vcore:16000]"}
+2022-06-18T10:13:25.973Z	INFO	scheduler/partition.go:647	Updated available resources from added node	{"partitionName": "[mycluster]default", "nodeID": "lab", "partitionResource": "map[ephemeral-storage:557532871372 hugepages-1Gi:0 hugepages-2Mi:0 memory:33159262208 pods:220 vcore:16000]"}
+2022-06-18T10:13:25.973Z	INFO	scheduler/context.go:625	successfully added node	{"nodeID": "lab", "partition": "[mycluster]default"}
+2022-06-18T10:13:25.973Z	DEBUG	rmproxy/rmproxy.go:64	enqueue event	{"eventType": "*rmevent.RMNodeUpdateEvent", "event": {"RmID":"mycluster","AcceptedNodes":[{"nodeID":"lab"}],"RejectedNodes":[]}, "currentQueueSize": 1}
+2022-06-18T10:13:25.973Z	DEBUG	callback/scheduler_callback.go:161	UpdateNode callback received	{"UpdateNodeResponse": "accepted:<nodeID:\"lab5\" > "}
+2022-06-18T10:13:25.973Z	DEBUG	callback/scheduler_callback.go:165	callback: response to accepted node	{"nodeID": "lab5"}
+2022-06-18T10:13:25.973Z	DEBUG	callback/scheduler_callback.go:161	UpdateNode callback received	{"UpdateNodeResponse": "accepted:<nodeID:\"lab\" > "}
+2022-06-18T10:13:25.973Z	DEBUG	callback/scheduler_callback.go:165	callback: response to accepted node	{"nodeID": "lab"}
+2022-06-18T10:13:25.973Z	DEBUG	cache/node.go:234	shim node state transition	{"nodeID": "lab5", "source": "Recovering", "destination": "Accepted", "event": "NodeAccepted"}
+2022-06-18T10:13:25.973Z	DEBUG	cache/node.go:234	shim node state transition	{"nodeID": "lab", "source": "Recovering", "destination": "Accepted", "event": "NodeAccepted"}
+2022-06-18T10:13:25.973Z	DEBUG	cache/node.go:234	shim node state transition	{"nodeID": "lab5", "source": "Accepted", "destination": "Healthy", "event": "NodeReady"}
+2022-06-18T10:13:25.973Z	DEBUG	cache/node.go:234	shim node state transition	{"nodeID": "lab", "source": "Accepted", "destination": "Healthy", "event": "NodeReady"}
+2022-06-18T10:13:26.952Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:26.973Z	INFO	cache/context_recovery.go:185	node state	{"nodeName": "lab", "nodeState": "Healthy"}
+2022-06-18T10:13:26.973Z	INFO	cache/context_recovery.go:185	node state	{"nodeName": "lab5", "nodeState": "Healthy"}
+2022-06-18T10:13:26.973Z	INFO	cache/context_recovery.go:199	nodes recovery is successful	{"recoveredNodes": 2}
+2022-06-18T10:13:26.973Z	INFO	shim/scheduler.go:226	scheduler recovery succeed
+2022-06-18T10:13:26.973Z	DEBUG	cache/context.go:142	adding node to cache	{"NodeName": "lab"}
+2022-06-18T10:13:26.973Z	DEBUG	shim/scheduler.go:333	scheduler shim state transition	{"source": "Recovering", "destination": "Running", "event": "RecoverSchedulerSucceed"}
+2022-06-18T10:13:26.973Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddNode.Pre)	{"nodes": 2, "pods": 13, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 13, "phases": {"Pending":1,"Running":12}}
+2022-06-18T10:13:26.973Z	INFO	shim/scheduler.go:356	No outstanding apps found for a while	{"timeout": "2m0s"}
+2022-06-18T10:13:26.973Z	DEBUG	external/scheduler_cache.go:122	Updating node in cache	{"nodeName": "lab"}
+2022-06-18T10:13:26.973Z	DEBUG	cache/context.go:292	configMap added
+2022-06-18T10:13:26.973Z	INFO	cache/context.go:322	trigger scheduler configuration reloading
+2022-06-18T10:13:26.973Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddNode.Post)	{"nodes": 2, "pods": 13, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 13, "phases": {"Pending":1,"Running":12}}
+2022-06-18T10:13:26.973Z	INFO	cache/nodes.go:238	scheduler node event 	{"name": "lab", "current state ": "New", "transition to ": "RecoverNode"}
+2022-06-18T10:13:26.973Z	DEBUG	cache/context.go:292	configMap added
+2022-06-18T10:13:26.973Z	INFO	cache/context.go:322	trigger scheduler configuration reloading
+2022-06-18T10:13:26.973Z	INFO	configs/configwatcher.go:148	config watcher is already running. Extending config watcher duration
+2022-06-18T10:13:26.974Z	DEBUG	cache/context.go:142	adding node to cache	{"NodeName": "lab5"}
+2022-06-18T10:13:26.974Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddNode.Pre)	{"nodes": 2, "pods": 13, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 13, "phases": {"Pending":1,"Running":12}}
+2022-06-18T10:13:26.974Z	DEBUG	external/scheduler_cache.go:122	Updating node in cache	{"nodeName": "lab5"}
+2022-06-18T10:13:26.974Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddNode.Post)	{"nodes": 2, "pods": 13, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 13, "phases": {"Pending":1,"Running":12}}
+2022-06-18T10:13:26.974Z	INFO	cache/nodes.go:238	scheduler node event 	{"name": "lab5", "current state ": "New", "transition to ": "RecoverNode"}
+2022-06-18T10:13:27.952Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:27.974Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:27.974Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:28.953Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:28.974Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:28.974Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:29.954Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:29.975Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:29.975Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:30.954Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:30.975Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:30.975Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:31.955Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:31.976Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:31.976Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:32.956Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:32.977Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:32.977Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:33.957Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:33.977Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:33.977Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:34.958Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:34.979Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:34.979Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:35.959Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:35.959Z	DEBUG	scheduler/partition_manager.go:83	time consumed for queue cleaner	{"duration": "24.162µs"}
+2022-06-18T10:13:35.979Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:35.979Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:36.960Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:36.979Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:36.979Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:37.960Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:37.980Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:37.980Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:38.960Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:38.980Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:38.980Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:39.961Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:39.981Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:39.981Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:40.962Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:40.981Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:40.981Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:41.962Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:41.982Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:41.982Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:42.962Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:42.983Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:42.983Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:43.068Z	DEBUG	general/general.go:235	pod added	{"appType": "general", "Name": "nginx-758d456f6b-ccgtb", "Namespace": "default"}
+2022-06-18T10:13:43.068Z	DEBUG	cache/context.go:219	adding pod to cache	{"podName": "nginx-758d456f6b-ccgtb"}
+2022-06-18T10:13:43.068Z	DEBUG	utils/utils.go:232	Unable to retrieve user name from pod labels. Empty user label	{"userLabel": "yunikorn.apache.org/username"}
+2022-06-18T10:13:43.068Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Pre)	{"nodes": 2, "pods": 13, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 13, "phases": {"Pending":1,"Running":12}}
+2022-06-18T10:13:43.068Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "nginx-758d456f6b-ccgtb", "podKey": "a2a4df5b-668e-4894-8aec-f29b0f85480a"}
+2022-06-18T10:13:43.068Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Post)	{"nodes": 2, "pods": 14, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 13, "phases": {"Pending":2,"Running":12}}
+2022-06-18T10:13:43.068Z	DEBUG	cache/context.go:597	AddApplication	{"Request": {"Metadata":{"ApplicationID":"nginx_2019_01_22_00001","QueueName":"root.sandbox","User":"nobody","Tags":{"namespace":"default","yunikorn.apache.org/schedulingPolicyParameters":"gangSchedulingStyle=Hard","yunikorn.apache.org/task-groups":""},"TaskGroups":null,"OwnerReferences":[{"apiVersion":"apps/v1","kind":"ReplicaSet","name":"nginx-758d456f6b","uid":"11c9c2f6-2bdd-4f76-b484-f41922c5b9ac","controller":true,"blockOwnerDeletion":true}],"SchedulingPolicyParameters":{},"CreationTime":0}}}
+2022-06-18T10:13:43.068Z	DEBUG	cache/context.go:606	app namespace info	{"appID": "nginx_2019_01_22_00001", "namespace": "default"}
+2022-06-18T10:13:43.068Z	INFO	cache/context.go:632	app added	{"appID": "nginx_2019_01_22_00001"}
+2022-06-18T10:13:43.068Z	DEBUG	cache/context.go:687	AddTask	{"appID": "nginx_2019_01_22_00001", "taskID": "a2a4df5b-668e-4894-8aec-f29b0f85480a"}
+2022-06-18T10:13:43.068Z	INFO	cache/context.go:696	task added	{"appID": "nginx_2019_01_22_00001", "taskID": "a2a4df5b-668e-4894-8aec-f29b0f85480a", "taskState": "New"}
+2022-06-18T10:13:43.962Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:43.981Z	DEBUG	cache/application.go:734	shim app state transition	{"app": "nginx_2019_01_22_00001", "source": "New", "destination": "Submitted", "event": "SubmitApplication"}
+2022-06-18T10:13:43.981Z	INFO	cache/application.go:461	handle app submission	{"app": "applicationID: nginx_2019_01_22_00001, queue: root.sandbox, partition: default, totalNumOfTasks: 1, currentState: Submitted", "clusterID": "mycluster"}
+2022-06-18T10:13:43.981Z	INFO	scheduler/context.go:487	enter handleRMUpdateApplicationEvent()
+2022-06-18T10:13:43.981Z	DEBUG	scheduler/scheduler.go:106	enqueued event	{"eventType": "*rmevent.RMUpdateApplicationEvent", "event": {"Request":{"new":[{"applicationID":"nginx_2019_01_22_00001","queueName":"root.sandbox","partitionName":"[mycluster]default","ugi":{"user":"nobody"},"tags":{"namespace":"default","yunikorn.apache.org/schedulingPolicyParameters":"gangSchedulingStyle=Hard","yunikorn.apache.org/task-groups":""},"gangSchedulingStyle":"Hard"}],"rmID":"mycluster"}}, "currentQueueSize": 0}
+2022-06-18T10:13:43.981Z	INFO	scheduler/context.go:488	&{Request:new:<applicationID:"nginx_2019_01_22_00001" queueName:"root.sandbox" partitionName:"[mycluster]default" ugi:<user:"nobody" > tags:<key:"namespace" value:"default" > tags:<key:"yunikorn.apache.org/schedulingPolicyParameters" value:"gangSchedulingStyle=Hard" > tags:<key:"yunikorn.apache.org/task-groups" value:"" > gangSchedulingStyle:"Hard" > rmID:"mycluster" }
+
+2022-06-18T10:13:43.981Z	INFO	scheduler/partition.go:309	enter AddApplication()
+2022-06-18T10:13:43.981Z	INFO	scheduler/partition.go:310	ApplicationID: nginx_2019_01_22_00001, Partition: [mycluster]default, SubmissionTime: 323032322d30362d31382031303a31333a34332e393831353436333539202b3030303020555443206d3d2b31392e303439313431303434, State: New
+
+2022-06-18T10:13:43.981Z	INFO	placement/placement.go:137	enter PlaceApplication()
+2022-06-18T10:13:43.981Z	INFO	placement/placement.go:138	&{name: rules:[0xc000134c80] initialised:true queueFn:0x993ee0 RWMutex:{w:{state:0 sema:0} writerSem:0 readerSem:0 readerCount:0 readerWait:0}}
+
+2022-06-18T10:13:43.981Z	INFO	placement/placement.go:149	Executing rule for placing application	{"ruleName": "tag", "application": "nginx_2019_01_22_00001"}
+2022-06-18T10:13:43.981Z	INFO	placement/tag_rule.go:61	enter placeApplication()
+2022-06-18T10:13:43.981Z	INFO	placement/tag_rule.go:108	Tag rule intermediate result	{"application": "nginx_2019_01_22_00001", "queue": "root.default"}
+2022-06-18T10:13:43.981Z	INFO	placement/tag_rule.go:117	Tag rule application placed	{"application": "nginx_2019_01_22_00001", "queue": "root.default"}
+2022-06-18T10:13:43.981Z	INFO	placement/placement.go:208	Rule result for placing application	{"application": "nginx_2019_01_22_00001", "queueName": "root.default"}
+2022-06-18T10:13:43.981Z	DEBUG	scheduler/partition.go:531	Checking queue creation
+2022-06-18T10:13:43.981Z	DEBUG	scheduler/partition.go:545	Creating queue(s)	{"parent": "root", "fullPath": "root.default"}
+2022-06-18T10:13:43.981Z	INFO	objects/queue.go:150	dynamic queue added to scheduler	{"queueName": "root.default"}
+2022-06-18T10:13:43.981Z	INFO	scheduler/context.go:542	Added application to partition	{"applicationID": "nginx_2019_01_22_00001", "partitionName": "[mycluster]default", "requested queue": "root.sandbox", "placed queue": "root.default"}
+2022-06-18T10:13:43.981Z	DEBUG	rmproxy/rmproxy.go:64	enqueue event	{"eventType": "*rmevent.RMApplicationUpdateEvent", "event": {"RmID":"mycluster","AcceptedApplications":[{"applicationID":"nginx_2019_01_22_00001"}],"RejectedApplications":[],"UpdatedApplications":null}, "currentQueueSize": 0}
+2022-06-18T10:13:43.981Z	DEBUG	callback/scheduler_callback.go:104	UpdateApplication callback received	{"UpdateApplicationResponse": "accepted:<applicationID:\"nginx_2019_01_22_00001\" > "}
+2022-06-18T10:13:43.981Z	DEBUG	callback/scheduler_callback.go:110	callback: response to accepted application	{"appID": "nginx_2019_01_22_00001"}
+2022-06-18T10:13:43.981Z	INFO	callback/scheduler_callback.go:114	Accepting app	{"appID": "nginx_2019_01_22_00001"}
+2022-06-18T10:13:43.981Z	DEBUG	cache/application.go:734	shim app state transition	{"app": "nginx_2019_01_22_00001", "source": "Submitted", "destination": "Accepted", "event": "AcceptApplication"}
+2022-06-18T10:13:43.984Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:43.984Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:44.963Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:44.982Z	DEBUG	cache/application.go:551	postAppAccepted on cached app	{"appID": "nginx_2019_01_22_00001", "numTaskGroups": 0, "numAllocatedTasks": 0}
+2022-06-18T10:13:44.982Z	DEBUG	cache/application.go:523	Skip reservation stage: no task groups defined	{"appID": "nginx_2019_01_22_00001"}
+2022-06-18T10:13:44.982Z	INFO	cache/application.go:557	Skip the reservation stage	{"appID": "nginx_2019_01_22_00001"}
+2022-06-18T10:13:44.982Z	DEBUG	cache/application.go:734	shim app state transition	{"app": "nginx_2019_01_22_00001", "source": "Accepted", "destination": "Running", "event": "RunApplication"}
+2022-06-18T10:13:44.985Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:44.985Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:45.959Z	DEBUG	scheduler/partition_manager.go:113	removing queue	{"queueName": "root.default", "partitionName": "[mycluster]default"}
+2022-06-18T10:13:45.959Z	DEBUG	scheduler/partition_manager.go:126	skip removing the queue	{"reason": "there are existing assigned apps or leaf queues", "queue": "root.default", "partitionName": "[mycluster]default"}
+2022-06-18T10:13:45.959Z	DEBUG	scheduler/partition_manager.go:83	time consumed for queue cleaner	{"duration": "59.611µs"}
+2022-06-18T10:13:45.964Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:45.982Z	DEBUG	cache/task.go:600	shim task state transition	{"app": "nginx_2019_01_22_00001", "task": "a2a4df5b-668e-4894-8aec-f29b0f85480a", "taskAlias": "default/nginx-758d456f6b-ccgtb", "source": "New", "destination": "Pending", "event": "InitTask"}
+2022-06-18T10:13:45.982Z	DEBUG	cache/task.go:600	shim task state transition	{"app": "nginx_2019_01_22_00001", "task": "a2a4df5b-668e-4894-8aec-f29b0f85480a", "taskAlias": "default/nginx-758d456f6b-ccgtb", "source": "Pending", "destination": "Scheduling", "event": "SubmitTask"}
+2022-06-18T10:13:45.982Z	DEBUG	cache/task.go:310	scheduling pod	{"podName": "nginx-758d456f6b-ccgtb"}
+2022-06-18T10:13:45.982Z	DEBUG	cache/task.go:320	send update request	{"request": "asks:<allocationKey:\"a2a4df5b-668e-4894-8aec-f29b0f85480a\" applicationID:\"nginx_2019_01_22_00001\" resourceAsk:<resources:<key:\"memory\" value:<value:1024000000 > > resources:<key:\"vcore\" value:<value:500 > > > maxAllocations:1 tags:<key:\"kubernetes.io/label/app\" value:\"nginx\" > tags:<key:\"kubernetes.io/label/applicationId\" value:\"nginx_2019_01_22_00001\" > tags:<key:\"kubernetes.io/label/pod-template-hash\" value:\"758d456f6b\" > tags:<key:\"kubernetes.io/label/queue\" value:\"root.sandbox\" > tags:<key:\"kubernetes.io/meta/namespace\" value:\"default\" > tags:<key:\"kubernetes.io/meta/podName\" value:\"nginx-758d456f6b-ccgtb\" > > rmID:\"mycluster\" "}
+2022-06-18T10:13:45.982Z	INFO	rmproxy/rmproxy.go:309	enter UpdateAllocation()
+2022-06-18T10:13:45.982Z	INFO	rmproxy/rmproxy.go:310	asks:<allocationKey:"a2a4df5b-668e-4894-8aec-f29b0f85480a" applicationID:"nginx_2019_01_22_00001" resourceAsk:<resources:<key:"memory" value:<value:1024000000 > > resources:<key:"vcore" value:<value:500 > > > maxAllocations:1 tags:<key:"kubernetes.io/label/app" value:"nginx" > tags:<key:"kubernetes.io/label/applicationId" value:"nginx_2019_01_22_00001" > tags:<key:"kubernetes.io/label/pod-template-hash" value:"758d456f6b" > tags:<key:"kubernetes.io/label/queue" value:"root.sandbox" > tags:<key:"kubernetes.io/meta/namespace" value:"default" > tags:<key:"kubernetes.io/meta/podName" value:"nginx-758d456f6b-ccgtb" > > rmID:"mycluster" 
+
+2022-06-18T10:13:45.982Z	INFO	scheduler/context.go:731	enter handleRMUpdateAllocationEvent()
+2022-06-18T10:13:45.983Z	INFO	scheduler/context.go:732	&{Request:asks:<allocationKey:"a2a4df5b-668e-4894-8aec-f29b0f85480a" applicationID:"nginx_2019_01_22_00001" partitionName:"[mycluster]default" resourceAsk:<resources:<key:"memory" value:<value:1024000000 > > resources:<key:"vcore" value:<value:500 > > > maxAllocations:1 tags:<key:"kubernetes.io/label/app" value:"nginx" > tags:<key:"kubernetes.io/label/applicationId" value:"nginx_2019_01_22_00001" > tags:<key:"kubernetes.io/label/pod-template-hash" value:"758d456f6b" > tags:<key:"kubernetes.io/label/queue" value:"root.sandbox" > tags:<key:"kubernetes.io/meta/namespace" value:"default" > tags:<key:"kubernetes.io/meta/podName" value:"nginx-758d456f6b-ccgtb" > > rmID:"mycluster" }
+
+2022-06-18T10:13:45.983Z	INFO	scheduler/context.go:750	enter processAsks()
+2022-06-18T10:13:45.983Z	INFO	scheduler/context.go:751	asks:<allocationKey:"a2a4df5b-668e-4894-8aec-f29b0f85480a" applicationID:"nginx_2019_01_22_00001" partitionName:"[mycluster]default" resourceAsk:<resources:<key:"memory" value:<value:1024000000 > > resources:<key:"vcore" value:<value:500 > > > maxAllocations:1 tags:<key:"kubernetes.io/label/app" value:"nginx" > tags:<key:"kubernetes.io/label/applicationId" value:"nginx_2019_01_22_00001" > tags:<key:"kubernetes.io/label/pod-template-hash" value:"758d456f6b" > tags:<key:"kubernetes.io/label/queue" value:"root.sandbox" > tags:<key:"kubernetes.io/meta/namespace" value:"default" > tags:<key:"kubernetes.io/meta/podName" value:"nginx-758d456f6b-ccgtb" > > rmID:"mycluster" 
+
+2022-06-18T10:13:45.983Z	INFO	scheduler/context.go:777	map[kubernetes.io/label/app:nginx kubernetes.io/label/applicationId:nginx_2019_01_22_00001 kubernetes.io/label/pod-template-hash:758d456f6b kubernetes.io/label/queue:root.sandbox kubernetes.io/meta/namespace:default kubernetes.io/meta/podName:nginx-758d456f6b-ccgtb]
+
+2022-06-18T10:13:45.983Z	INFO	scheduler/context.go:780	{"kubernetes.io/label/app":"nginx","kubernetes.io/label/applicationId":"nginx_2019_01_22_00001","kubernetes.io/label/pod-template-hash":"758d456f6b","kubernetes.io/label/queue":"root.sandbox","kubernetes.io/meta/namespace":"default","kubernetes.io/meta/podName":"nginx-758d456f6b-ccgtb"}
+2022-06-18T10:13:45.983Z	INFO	scheduler/partition.go:1433	enter addAllocationAsk()
+2022-06-18T10:13:45.982Z	DEBUG	scheduler/scheduler.go:106	enqueued event	{"eventType": "*rmevent.RMUpdateAllocationEvent", "event": {"Request":{"asks":[{"allocationKey":"a2a4df5b-668e-4894-8aec-f29b0f85480a","applicationID":"nginx_2019_01_22_00001","partitionName":"[mycluster]default","resourceAsk":{"resources":{"memory":{"value":1024000000},"vcore":{"value":500}}},"maxAllocations":1,"tags":{"kubernetes.io/label/app":"nginx","kubernetes.io/label/applicationId":"nginx_2019_01_22_00001","kubernetes.io/label/pod-template-hash":"758d456f6b","kubernetes.io/label/queue":"root.sandbox","kubernetes.io/meta/namespace":"default","kubernetes.io/meta/podName":"nginx-758d456f6b-ccgtb"}}],"rmID":"mycluster"}}, "currentQueueSize": 0}
+2022-06-18T10:13:45.983Z	INFO	objects/application_state.go:129	Application state transition	{"appID": "nginx_2019_01_22_00001", "source": "New", "destination": "Accepted", "event": "runApplication"}
+2022-06-18T10:13:45.983Z	DEBUG	rmproxy/rmproxy.go:64	enqueue event	{"eventType": "*rmevent.RMApplicationUpdateEvent", "event": {"RmID":"mycluster","AcceptedApplications":[],"RejectedApplications":[],"UpdatedApplications":[{"applicationID":"nginx_2019_01_22_00001","state":"Accepted","stateTransitionTimestamp":1655547225983142257,"message":"runApplication"}]}, "currentQueueSize": 0}
+2022-06-18T10:13:45.983Z	INFO	objects/application.go:585	Ask added successfully to application	{"appID": "nginx_2019_01_22_00001", "ask": "a2a4df5b-668e-4894-8aec-f29b0f85480a", "placeholder": false, "pendingDelta": "map[memory:2048000000 vcore:1000]"}
+2022-06-18T10:13:45.983Z	DEBUG	callback/scheduler_callback.go:104	UpdateApplication callback received	{"UpdateApplicationResponse": "updated:<applicationID:\"nginx_2019_01_22_00001\" state:\"Accepted\" stateTransitionTimestamp:1655547225983142257 message:\"runApplication\" > "}
+2022-06-18T10:13:45.983Z	DEBUG	callback/scheduler_callback.go:133	status update callback received	{"appId": "nginx_2019_01_22_00001", "new status": "Accepted"}
+2022-06-18T10:13:45.983Z	DEBUG	objects/application.go:284	Application state timer initiated	{"appID": "nginx_2019_01_22_00001", "state": "Starting", "timeout": "5m0s"}
+2022-06-18T10:13:45.983Z	INFO	objects/application_state.go:129	Application state transition	{"appID": "nginx_2019_01_22_00001", "source": "Accepted", "destination": "Starting", "event": "runApplication"}
+2022-06-18T10:13:45.983Z	DEBUG	rmproxy/rmproxy.go:64	enqueue event	{"eventType": "*rmevent.RMApplicationUpdateEvent", "event": {"RmID":"mycluster","AcceptedApplications":[],"RejectedApplications":[],"UpdatedApplications":[{"applicationID":"nginx_2019_01_22_00001","state":"Starting","stateTransitionTimestamp":1655547225983321750,"message":"runApplication"}]}, "currentQueueSize": 0}
+2022-06-18T10:13:45.983Z	DEBUG	objects/queue.go:1072	allocation found on queue	{"queueName": "root.default", "appID": "nginx_2019_01_22_00001", "allocation": "ApplicationID=nginx_2019_01_22_00001, UUID=303b7808-05e1-45a7-a4bd-c045b85bd40f, AllocationKey=a2a4df5b-668e-4894-8aec-f29b0f85480a, Node=lab5, Result=Allocated"}
+2022-06-18T10:13:45.983Z	INFO	scheduler/partition.go:931	scheduler allocation processed	{"appID": "nginx_2019_01_22_00001", "allocationKey": "a2a4df5b-668e-4894-8aec-f29b0f85480a", "UUID": "303b7808-05e1-45a7-a4bd-c045b85bd40f", "allocatedResource": "map[memory:2048000000 vcore:1000]", "placeholder": false, "targetNode": "lab5"}
+2022-06-18T10:13:45.983Z	INFO	scheduler/context.go:857	enter notifyRMNewAllocation()
+2022-06-18T10:13:45.983Z	INFO	scheduler/context.go:858	ApplicationID=nginx_2019_01_22_00001, UUID=303b7808-05e1-45a7-a4bd-c045b85bd40f, AllocationKey=a2a4df5b-668e-4894-8aec-f29b0f85480a, Node=lab5, Result=Allocated
+
+2022-06-18T10:13:45.983Z	INFO	scheduler/context.go:859	mycluster
+
+2022-06-18T10:13:45.983Z	DEBUG	rmproxy/rmproxy.go:64	enqueue event	{"eventType": "*rmevent.RMNewAllocationsEvent", "event": {"RmID":"mycluster","Allocations":[{"allocationKey":"a2a4df5b-668e-4894-8aec-f29b0f85480a","UUID":"303b7808-05e1-45a7-a4bd-c045b85bd40f","resourcePerAlloc":{"resources":{"memory":{"value":2048000000},"vcore":{"value":1000}}},"nodeID":"lab5","applicationID":"nginx_2019_01_22_00001"}]}, "currentQueueSize": 1}
+2022-06-18T10:13:45.983Z	DEBUG	callback/scheduler_callback.go:104	UpdateApplication callback received	{"UpdateApplicationResponse": "updated:<applicationID:\"nginx_2019_01_22_00001\" state:\"Starting\" stateTransitionTimestamp:1655547225983321750 message:\"runApplication\" > "}
+2022-06-18T10:13:45.983Z	DEBUG	callback/scheduler_callback.go:133	status update callback received	{"appId": "nginx_2019_01_22_00001", "new status": "Starting"}
+2022-06-18T10:13:45.983Z	DEBUG	callback/scheduler_callback.go:44	UpdateAllocation callback received	{"UpdateAllocationResponse": "new:<allocationKey:\"a2a4df5b-668e-4894-8aec-f29b0f85480a\" UUID:\"303b7808-05e1-45a7-a4bd-c045b85bd40f\" resourcePerAlloc:<resources:<key:\"memory\" value:<value:2048000000 > > resources:<key:\"vcore\" value:<value:1000 > > > nodeID:\"lab5\" applicationID:\"nginx_2019_01_22_00001\" > "}
+2022-06-18T10:13:45.983Z	DEBUG	callback/scheduler_callback.go:49	callback: response to new allocation	{"allocationKey": "a2a4df5b-668e-4894-8aec-f29b0f85480a", "UUID": "303b7808-05e1-45a7-a4bd-c045b85bd40f", "applicationID": "nginx_2019_01_22_00001", "nodeID": "lab5"}
+2022-06-18T10:13:45.983Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AssumePod.Pre)	{"nodes": 2, "pods": 14, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 13, "phases": {"Pending":2,"Running":12}}
+2022-06-18T10:13:45.983Z	DEBUG	external/scheduler_cache.go:364	Adding assumed pod to cache	{"podName": "nginx-758d456f6b-ccgtb", "podKey": "a2a4df5b-668e-4894-8aec-f29b0f85480a", "node": "lab5", "allBound": true}
+2022-06-18T10:13:45.983Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "nginx-758d456f6b-ccgtb", "podKey": "a2a4df5b-668e-4894-8aec-f29b0f85480a"}
+2022-06-18T10:13:45.983Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AssumePod.Post)	{"nodes": 2, "pods": 14, "assumed": 1, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":2,"Running":12}}
+2022-06-18T10:13:45.983Z	DEBUG	scheduler/context.go:871	Successfully synced shim on new allocation. response: no. of allocations: 1
+2022-06-18T10:13:45.983Z	DEBUG	cache/task.go:600	shim task state transition	{"app": "nginx_2019_01_22_00001", "task": "a2a4df5b-668e-4894-8aec-f29b0f85480a", "taskAlias": "default/nginx-758d456f6b-ccgtb", "source": "Scheduling", "destination": "TaskAllocated", "event": "TaskAllocated"}
+2022-06-18T10:13:45.983Z	DEBUG	cache/task.go:392	bind pod volumes	{"podName": "nginx-758d456f6b-ccgtb", "podUID": "a2a4df5b-668e-4894-8aec-f29b0f85480a"}
+2022-06-18T10:13:45.983Z	INFO	cache/context.go:359	Binding Pod Volumes skipped: all volumes already bound	{"podName": "nginx-758d456f6b-ccgtb"}
+2022-06-18T10:13:45.983Z	DEBUG	cache/task.go:405	bind pod	{"podName": "nginx-758d456f6b-ccgtb", "podUID": "a2a4df5b-668e-4894-8aec-f29b0f85480a"}
+2022-06-18T10:13:45.983Z	INFO	client/kubeclient.go:84	bind pod to node	{"podName": "nginx-758d456f6b-ccgtb", "podUID": "a2a4df5b-668e-4894-8aec-f29b0f85480a", "nodeID": "lab5"}
+2022-06-18T10:13:45.985Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:45.985Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:45.989Z	INFO	cache/task.go:418	successfully bound pod	{"podName": "nginx-758d456f6b-ccgtb"}
+2022-06-18T10:13:45.990Z	DEBUG	cache/task.go:600	shim task state transition	{"app": "nginx_2019_01_22_00001", "task": "a2a4df5b-668e-4894-8aec-f29b0f85480a", "taskAlias": "default/nginx-758d456f6b-ccgtb", "source": "TaskAllocated", "destination": "Bound", "event": "TaskBound"}
+2022-06-18T10:13:45.990Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (UpdatePod.Pre)	{"nodes": 2, "pods": 14, "assumed": 1, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":2,"Running":12}}
+2022-06-18T10:13:45.990Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "nginx-758d456f6b-ccgtb", "podKey": "a2a4df5b-668e-4894-8aec-f29b0f85480a"}
+2022-06-18T10:13:45.990Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (UpdatePod.Post)	{"nodes": 2, "pods": 14, "assumed": 1, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":2,"Running":12}}
+2022-06-18T10:13:45.999Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (UpdatePod.Pre)	{"nodes": 2, "pods": 14, "assumed": 1, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":2,"Running":12}}
+2022-06-18T10:13:45.999Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "nginx-758d456f6b-ccgtb", "podKey": "a2a4df5b-668e-4894-8aec-f29b0f85480a"}
+2022-06-18T10:13:45.999Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (UpdatePod.Post)	{"nodes": 2, "pods": 14, "assumed": 1, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":2,"Running":12}}
+2022-06-18T10:13:46.964Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:46.986Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:46.986Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:47.281Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (UpdatePod.Pre)	{"nodes": 2, "pods": 14, "assumed": 1, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":2,"Running":12}}
+2022-06-18T10:13:47.281Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "nginx-758d456f6b-ccgtb", "podKey": "a2a4df5b-668e-4894-8aec-f29b0f85480a"}
+2022-06-18T10:13:47.281Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (UpdatePod.Post)	{"nodes": 2, "pods": 14, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":1,"Running":13}}
+2022-06-18T10:13:47.965Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:47.987Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:47.987Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:48.966Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:48.988Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:48.988Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:49.967Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:49.988Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:49.988Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:50.967Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:50.989Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:50.989Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:51.344Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (UpdatePod.Pre)	{"nodes": 2, "pods": 14, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":1,"Running":13}}
+2022-06-18T10:13:51.344Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "nginx-758d456f6b-ccgtb", "podKey": "a2a4df5b-668e-4894-8aec-f29b0f85480a"}
+2022-06-18T10:13:51.344Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (UpdatePod.Post)	{"nodes": 2, "pods": 14, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":1,"Running":13}}
+2022-06-18T10:13:51.967Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:51.990Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:51.990Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:52.327Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (UpdatePod.Pre)	{"nodes": 2, "pods": 14, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":1,"Running":13}}
+2022-06-18T10:13:52.327Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "nginx-758d456f6b-ccgtb", "podKey": "a2a4df5b-668e-4894-8aec-f29b0f85480a"}
+2022-06-18T10:13:52.327Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (UpdatePod.Post)	{"nodes": 2, "pods": 14, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":1,"Running":13}}
+2022-06-18T10:13:52.330Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (UpdatePod.Pre)	{"nodes": 2, "pods": 14, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":1,"Running":13}}
+2022-06-18T10:13:52.330Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "nginx-758d456f6b-ccgtb", "podKey": "a2a4df5b-668e-4894-8aec-f29b0f85480a"}
+2022-06-18T10:13:52.330Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (UpdatePod.Post)	{"nodes": 2, "pods": 14, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":1,"Running":13}}
+2022-06-18T10:13:52.332Z	DEBUG	cache/context.go:240	removing pod from cache	{"podName": "nginx-758d456f6b-ccgtb"}
+2022-06-18T10:13:52.332Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (RemovePod.Pre)	{"nodes": 2, "pods": 14, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":1,"Running":13}}
+2022-06-18T10:13:52.332Z	DEBUG	external/scheduler_cache.go:324	Removing deleted pod from cache	{"podName": "nginx-758d456f6b-ccgtb", "podKey": "a2a4df5b-668e-4894-8aec-f29b0f85480a"}
+2022-06-18T10:13:52.332Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (RemovePod.Post)	{"nodes": 2, "pods": 13, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 13, "phases": {"Pending":1,"Running":12}}
+2022-06-18T10:13:52.332Z	INFO	general/general.go:321	delete pod	{"appType": "general", "namespace": "default", "podName": "nginx-758d456f6b-ccgtb", "podUID": "a2a4df5b-668e-4894-8aec-f29b0f85480a"}
+2022-06-18T10:13:52.332Z	DEBUG	cache/context.go:539	NotifyTaskComplete	{"appID": "nginx_2019_01_22_00001", "taskID": "a2a4df5b-668e-4894-8aec-f29b0f85480a"}
+2022-06-18T10:13:52.332Z	DEBUG	cache/context.go:543	release allocation	{"appID": "nginx_2019_01_22_00001", "taskID": "a2a4df5b-668e-4894-8aec-f29b0f85480a"}
+2022-06-18T10:13:52.332Z	DEBUG	cache/task.go:525	prepare to send release request	{"applicationID": "nginx_2019_01_22_00001", "taskID": "a2a4df5b-668e-4894-8aec-f29b0f85480a", "taskAlias": "default/nginx-758d456f6b-ccgtb", "allocationUUID": "303b7808-05e1-45a7-a4bd-c045b85bd40f", "task": "Bound", "terminationType": ""}
+2022-06-18T10:13:52.332Z	INFO	cache/task.go:563	releasing allocations	{"numOfAsksToRelease": 0, "numOfAllocationsToRelease": 1}
+2022-06-18T10:13:52.332Z	INFO	rmproxy/rmproxy.go:309	enter UpdateAllocation()
+2022-06-18T10:13:52.333Z	INFO	rmproxy/rmproxy.go:310	releases:<allocationsToRelease:<partitionName:"default" applicationID:"nginx_2019_01_22_00001" UUID:"303b7808-05e1-45a7-a4bd-c045b85bd40f" terminationType:STOPPED_BY_RM message:"task completed" > > rmID:"mycluster" 
+
+2022-06-18T10:13:52.333Z	DEBUG	cache/task.go:600	shim task state transition	{"app": "nginx_2019_01_22_00001", "task": "a2a4df5b-668e-4894-8aec-f29b0f85480a", "taskAlias": "default/nginx-758d456f6b-ccgtb", "source": "Bound", "destination": "Completed", "event": "CompleteTask"}
+2022-06-18T10:13:52.333Z	DEBUG	scheduler/scheduler.go:106	enqueued event	{"eventType": "*rmevent.RMUpdateAllocationEvent", "event": {"Request":{"releases":{"allocationsToRelease":[{"partitionName":"[mycluster]default","applicationID":"nginx_2019_01_22_00001","UUID":"303b7808-05e1-45a7-a4bd-c045b85bd40f","terminationType":1,"message":"task completed"}]},"rmID":"mycluster"}}, "currentQueueSize": 0}
+2022-06-18T10:13:52.333Z	INFO	scheduler/context.go:731	enter handleRMUpdateAllocationEvent()
+2022-06-18T10:13:52.333Z	INFO	scheduler/context.go:732	&{Request:releases:<allocationsToRelease:<partitionName:"[mycluster]default" applicationID:"nginx_2019_01_22_00001" UUID:"303b7808-05e1-45a7-a4bd-c045b85bd40f" terminationType:STOPPED_BY_RM message:"task completed" > > rmID:"mycluster" }
+
+2022-06-18T10:13:52.333Z	INFO	scheduler/partition.go:1303	removing allocation from application	{"appID": "nginx_2019_01_22_00001", "allocationId": "303b7808-05e1-45a7-a4bd-c045b85bd40f", "terminationType": "STOPPED_BY_RM"}
+2022-06-18T10:13:52.333Z	DEBUG	objects/application.go:333	Application state timer cleared	{"appID": "nginx_2019_01_22_00001", "state": "Starting"}
+2022-06-18T10:13:52.333Z	DEBUG	objects/application.go:284	Application state timer initiated	{"appID": "nginx_2019_01_22_00001", "state": "Completing", "timeout": "30s"}
+2022-06-18T10:13:52.333Z	INFO	objects/application_state.go:129	Application state transition	{"appID": "nginx_2019_01_22_00001", "source": "Starting", "destination": "Completing", "event": "completeApplication"}
+2022-06-18T10:13:52.333Z	DEBUG	rmproxy/rmproxy.go:64	enqueue event	{"eventType": "*rmevent.RMApplicationUpdateEvent", "event": {"RmID":"mycluster","AcceptedApplications":[],"RejectedApplications":[],"UpdatedApplications":[{"applicationID":"nginx_2019_01_22_00001","state":"Completing","stateTransitionTimestamp":1655547232333198737,"message":"completeApplication"}]}, "currentQueueSize": 0}
+2022-06-18T10:13:52.333Z	INFO	scheduler/partition.go:1356	removing allocation from node	{"nodeID": "lab5", "allocationId": "303b7808-05e1-45a7-a4bd-c045b85bd40f"}
+2022-06-18T10:13:52.333Z	DEBUG	rmproxy/rmproxy.go:64	enqueue event	{"eventType": "*rmevent.RMReleaseAllocationEvent", "event": {"RmID":"mycluster","ReleasedAllocations":[{"partitionName":"default","applicationID":"nginx_2019_01_22_00001","UUID":"303b7808-05e1-45a7-a4bd-c045b85bd40f","terminationType":1,"message":"allocation remove as per RM request","allocationKey":"a2a4df5b-668e-4894-8aec-f29b0f85480a"}]}, "currentQueueSize": 1}
+2022-06-18T10:13:52.333Z	DEBUG	callback/scheduler_callback.go:104	UpdateApplication callback received	{"UpdateApplicationResponse": "updated:<applicationID:\"nginx_2019_01_22_00001\" state:\"Completing\" stateTransitionTimestamp:1655547232333198737 message:\"completeApplication\" > "}
+2022-06-18T10:13:52.333Z	DEBUG	callback/scheduler_callback.go:133	status update callback received	{"appId": "nginx_2019_01_22_00001", "new status": "Completing"}
+2022-06-18T10:13:52.333Z	DEBUG	callback/scheduler_callback.go:44	UpdateAllocation callback received	{"UpdateAllocationResponse": "released:<partitionName:\"default\" applicationID:\"nginx_2019_01_22_00001\" UUID:\"303b7808-05e1-45a7-a4bd-c045b85bd40f\" terminationType:STOPPED_BY_RM message:\"allocation remove as per RM request\" allocationKey:\"a2a4df5b-668e-4894-8aec-f29b0f85480a\" > "}
+2022-06-18T10:13:52.333Z	DEBUG	callback/scheduler_callback.go:77	callback: response to released allocations	{"UUID": "303b7808-05e1-45a7-a4bd-c045b85bd40f"}
+2022-06-18T10:13:52.333Z	DEBUG	cache/context.go:484	unable to forget pod: not found in cache	{"pod": "a2a4df5b-668e-4894-8aec-f29b0f85480a"}
+2022-06-18T10:13:52.333Z	DEBUG	scheduler/context.go:902	Successfully synced shim on released allocations. response: no. of allocations: 1
+2022-06-18T10:13:52.968Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:52.991Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:52.991Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:53.969Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:53.992Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:53.992Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:54.951Z	DEBUG	scheduler/health_checker.go:87	Scheduler is healthy	{"health check values": [{"Name":"Scheduling errors","Succeeded":true,"Description":"Check for scheduling error entries in metrics","DiagnosisMessage":"There were 0 scheduling errors logged in the metrics"},{"Name":"Failed nodes","Succeeded":true,"Description":"Check for failed nodes entries in metrics","DiagnosisMessage":"There were 0 failed nodes logged in the metrics"},{"Name":"Negative resources","Succeeded":true,"Description":"Check for negative resources in the partitions","DiagnosisMessage":"Partitions with negative resources: []"},{"Name":"Negative resources","Succeeded":true,"Description":"Check for negative resources in the nodes","DiagnosisMessage":"Nodes with negative resources: []"},{"Name":"Consistency of data","Succeeded":true,"Description":"Check if a node's allocated resource <= total resource of the node","DiagnosisMessage":"Nodes with inconsistent data: []"},{"Name":"Consistency of data","Succeeded":true,"Description":"Check if total partition resource == sum of the node resources from the partition","DiagnosisMessage":"Partitions with inconsistent data: []"},{"Name":"Consistency of data","Succeeded":true,"Description":"Check if node total resource = allocated resource + occupied resource + available resource","DiagnosisMessage":"Nodes with inconsistent data: []"},{"Name":"Consistency of data","Succeeded":true,"Description":"Check if node capacity >= allocated resources on the node","DiagnosisMessage":"Nodes with inconsistent data: []"},{"Name":"Reservation check","Succeeded":true,"Description":"Check the reservation nr compared to the number of nodes","DiagnosisMessage":"Reservation/node nr ratio: [0.000000]"},{"Name":"Orphan allocation on node check","Succeeded":true,"Description":"Check if there are orphan allocations on the nodes","DiagnosisMessage":"Orphan allocations: []"},{"Name":"Orphan allocation on app check","Succeeded":true,"Description":"Check if there are orphan allocations on the applications","DiagnosisMessage":"OrphanAllocations: []"}]}
+2022-06-18T10:13:54.970Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:54.992Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:54.992Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:55.960Z	DEBUG	scheduler/partition_manager.go:113	removing queue	{"queueName": "root.default", "partitionName": "[mycluster]default"}
+2022-06-18T10:13:55.960Z	DEBUG	scheduler/partition_manager.go:126	skip removing the queue	{"reason": "there are existing assigned apps or leaf queues", "queue": "root.default", "partitionName": "[mycluster]default"}
+2022-06-18T10:13:55.960Z	DEBUG	scheduler/partition_manager.go:83	time consumed for queue cleaner	{"duration": "40.818µs"}
+2022-06-18T10:13:55.970Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:55.993Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:55.993Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:56.970Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:56.993Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:56.993Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:57.971Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:57.994Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:57.994Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:58.972Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:58.995Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:58.995Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:13:59.972Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:13:59.996Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:13:59.996Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:00.973Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:00.997Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:00.997Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:01.974Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:01.997Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:01.997Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:02.974Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:02.998Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:02.998Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:03.295Z	DEBUG	cache/context.go:219	adding pod to cache	{"podName": "nginx-758d456f6b-xf4d7"}
+2022-06-18T10:14:03.295Z	DEBUG	general/general.go:235	pod added	{"appType": "general", "Name": "nginx-758d456f6b-xf4d7", "Namespace": "yunikorn"}
+2022-06-18T10:14:03.295Z	DEBUG	utils/utils.go:232	Unable to retrieve user name from pod labels. Empty user label	{"userLabel": "yunikorn.apache.org/username"}
+2022-06-18T10:14:03.295Z	DEBUG	cache/context.go:687	AddTask	{"appID": "nginx_2019_01_22_00001", "taskID": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93"}
+2022-06-18T10:14:03.295Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Pre)	{"nodes": 2, "pods": 13, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 13, "phases": {"Pending":1,"Running":12}}
+2022-06-18T10:14:03.295Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "nginx-758d456f6b-xf4d7", "podKey": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93"}
+2022-06-18T10:14:03.295Z	INFO	cache/context.go:696	task added	{"appID": "nginx_2019_01_22_00001", "taskID": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93", "taskState": "New"}
+2022-06-18T10:14:03.295Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AddPod.Post)	{"nodes": 2, "pods": 14, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 13, "phases": {"Pending":2,"Running":12}}
+2022-06-18T10:14:03.975Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:03.992Z	DEBUG	cache/task.go:600	shim task state transition	{"app": "nginx_2019_01_22_00001", "task": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93", "taskAlias": "yunikorn/nginx-758d456f6b-xf4d7", "source": "New", "destination": "Pending", "event": "InitTask"}
+2022-06-18T10:14:03.992Z	DEBUG	cache/task.go:600	shim task state transition	{"app": "nginx_2019_01_22_00001", "task": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93", "taskAlias": "yunikorn/nginx-758d456f6b-xf4d7", "source": "Pending", "destination": "Scheduling", "event": "SubmitTask"}
+2022-06-18T10:14:03.992Z	DEBUG	cache/task.go:310	scheduling pod	{"podName": "nginx-758d456f6b-xf4d7"}
+2022-06-18T10:14:03.992Z	DEBUG	cache/task.go:320	send update request	{"request": "asks:<allocationKey:\"fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93\" applicationID:\"nginx_2019_01_22_00001\" resourceAsk:<resources:<key:\"memory\" value:<value:1024000000 > > resources:<key:\"vcore\" value:<value:500 > > > maxAllocations:1 tags:<key:\"kubernetes.io/label/app\" value:\"nginx\" > tags:<key:\"kubernetes.io/label/applicationId\" value:\"nginx_2019_01_22_00001\" > tags:<key:\"kubernetes.io/label/pod-template-hash\" value:\"758d456f6b\" > tags:<key:\"kubernetes.io/label/queue\" value:\"root.sandbox\" > tags:<key:\"kubernetes.io/meta/namespace\" value:\"yunikorn\" > tags:<key:\"kubernetes.io/meta/podName\" value:\"nginx-758d456f6b-xf4d7\" > > rmID:\"mycluster\" "}
+2022-06-18T10:14:03.992Z	INFO	rmproxy/rmproxy.go:309	enter UpdateAllocation()
+2022-06-18T10:14:03.993Z	INFO	rmproxy/rmproxy.go:310	asks:<allocationKey:"fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93" applicationID:"nginx_2019_01_22_00001" resourceAsk:<resources:<key:"memory" value:<value:1024000000 > > resources:<key:"vcore" value:<value:500 > > > maxAllocations:1 tags:<key:"kubernetes.io/label/app" value:"nginx" > tags:<key:"kubernetes.io/label/applicationId" value:"nginx_2019_01_22_00001" > tags:<key:"kubernetes.io/label/pod-template-hash" value:"758d456f6b" > tags:<key:"kubernetes.io/label/queue" value:"root.sandbox" > tags:<key:"kubernetes.io/meta/namespace" value:"yunikorn" > tags:<key:"kubernetes.io/meta/podName" value:"nginx-758d456f6b-xf4d7" > > rmID:"mycluster" 
+
+2022-06-18T10:14:03.993Z	DEBUG	scheduler/scheduler.go:106	enqueued event	{"eventType": "*rmevent.RMUpdateAllocationEvent", "event": {"Request":{"asks":[{"allocationKey":"fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93","applicationID":"nginx_2019_01_22_00001","partitionName":"[mycluster]default","resourceAsk":{"resources":{"memory":{"value":1024000000},"vcore":{"value":500}}},"maxAllocations":1,"tags":{"kubernetes.io/label/app":"nginx","kubernetes.io/label/applicationId":"nginx_2019_01_22_00001","kubernetes.io/label/pod-template-hash":"758d456f6b","kubernetes.io/label/queue":"root.sandbox","kubernetes.io/meta/namespace":"yunikorn","kubernetes.io/meta/podName":"nginx-758d456f6b-xf4d7"}}],"rmID":"mycluster"}}, "currentQueueSize": 0}
+2022-06-18T10:14:03.993Z	INFO	scheduler/context.go:731	enter handleRMUpdateAllocationEvent()
+2022-06-18T10:14:03.993Z	INFO	scheduler/context.go:732	&{Request:asks:<allocationKey:"fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93" applicationID:"nginx_2019_01_22_00001" partitionName:"[mycluster]default" resourceAsk:<resources:<key:"memory" value:<value:1024000000 > > resources:<key:"vcore" value:<value:500 > > > maxAllocations:1 tags:<key:"kubernetes.io/label/app" value:"nginx" > tags:<key:"kubernetes.io/label/applicationId" value:"nginx_2019_01_22_00001" > tags:<key:"kubernetes.io/label/pod-template-hash" value:"758d456f6b" > tags:<key:"kubernetes.io/label/queue" value:"root.sandbox" > tags:<key:"kubernetes.io/meta/namespace" value:"yunikorn" > tags:<key:"kubernetes.io/meta/podName" value:"nginx-758d456f6b-xf4d7" > > rmID:"mycluster" }
+
+2022-06-18T10:14:03.993Z	INFO	scheduler/context.go:750	enter processAsks()
+2022-06-18T10:14:03.993Z	INFO	scheduler/context.go:751	asks:<allocationKey:"fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93" applicationID:"nginx_2019_01_22_00001" partitionName:"[mycluster]default" resourceAsk:<resources:<key:"memory" value:<value:1024000000 > > resources:<key:"vcore" value:<value:500 > > > maxAllocations:1 tags:<key:"kubernetes.io/label/app" value:"nginx" > tags:<key:"kubernetes.io/label/applicationId" value:"nginx_2019_01_22_00001" > tags:<key:"kubernetes.io/label/pod-template-hash" value:"758d456f6b" > tags:<key:"kubernetes.io/label/queue" value:"root.sandbox" > tags:<key:"kubernetes.io/meta/namespace" value:"yunikorn" > tags:<key:"kubernetes.io/meta/podName" value:"nginx-758d456f6b-xf4d7" > > rmID:"mycluster" 
+
+2022-06-18T10:14:03.993Z	INFO	scheduler/context.go:777	map[kubernetes.io/label/app:nginx kubernetes.io/label/applicationId:nginx_2019_01_22_00001 kubernetes.io/label/pod-template-hash:758d456f6b kubernetes.io/label/queue:root.sandbox kubernetes.io/meta/namespace:yunikorn kubernetes.io/meta/podName:nginx-758d456f6b-xf4d7]
+
+2022-06-18T10:14:03.993Z	INFO	scheduler/context.go:780	{"kubernetes.io/label/app":"nginx","kubernetes.io/label/applicationId":"nginx_2019_01_22_00001","kubernetes.io/label/pod-template-hash":"758d456f6b","kubernetes.io/label/queue":"root.sandbox","kubernetes.io/meta/namespace":"yunikorn","kubernetes.io/meta/podName":"nginx-758d456f6b-xf4d7"}
+2022-06-18T10:14:03.993Z	INFO	scheduler/partition.go:1433	enter addAllocationAsk()
+2022-06-18T10:14:03.993Z	DEBUG	objects/application.go:333	Application state timer cleared	{"appID": "nginx_2019_01_22_00001", "state": "Completing"}
+2022-06-18T10:14:03.993Z	INFO	objects/application_state.go:129	Application state transition	{"appID": "nginx_2019_01_22_00001", "source": "Completing", "destination": "Running", "event": "runApplication"}
+2022-06-18T10:14:03.993Z	DEBUG	rmproxy/rmproxy.go:64	enqueue event	{"eventType": "*rmevent.RMApplicationUpdateEvent", "event": {"RmID":"mycluster","AcceptedApplications":[],"RejectedApplications":[],"UpdatedApplications":[{"applicationID":"nginx_2019_01_22_00001","state":"Running","stateTransitionTimestamp":1655547243993340408,"message":"runApplication"}]}, "currentQueueSize": 0}
+2022-06-18T10:14:03.993Z	INFO	objects/application.go:585	Ask added successfully to application	{"appID": "nginx_2019_01_22_00001", "ask": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93", "placeholder": false, "pendingDelta": "map[memory:2048000000 vcore:1000]"}
+2022-06-18T10:14:03.993Z	DEBUG	callback/scheduler_callback.go:104	UpdateApplication callback received	{"UpdateApplicationResponse": "updated:<applicationID:\"nginx_2019_01_22_00001\" state:\"Running\" stateTransitionTimestamp:1655547243993340408 message:\"runApplication\" > "}
+2022-06-18T10:14:03.993Z	DEBUG	callback/scheduler_callback.go:133	status update callback received	{"appId": "nginx_2019_01_22_00001", "new status": "Running"}
+2022-06-18T10:14:03.993Z	DEBUG	objects/queue.go:1072	allocation found on queue	{"queueName": "root.default", "appID": "nginx_2019_01_22_00001", "allocation": "ApplicationID=nginx_2019_01_22_00001, UUID=1a4f17fa-a528-461c-894b-3ace46d3cc4e, AllocationKey=fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93, Node=lab5, Result=Allocated"}
+2022-06-18T10:14:03.993Z	INFO	scheduler/partition.go:931	scheduler allocation processed	{"appID": "nginx_2019_01_22_00001", "allocationKey": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93", "UUID": "1a4f17fa-a528-461c-894b-3ace46d3cc4e", "allocatedResource": "map[memory:2048000000 vcore:1000]", "placeholder": false, "targetNode": "lab5"}
+2022-06-18T10:14:03.993Z	INFO	scheduler/context.go:857	enter notifyRMNewAllocation()
+2022-06-18T10:14:03.993Z	INFO	scheduler/context.go:858	ApplicationID=nginx_2019_01_22_00001, UUID=1a4f17fa-a528-461c-894b-3ace46d3cc4e, AllocationKey=fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93, Node=lab5, Result=Allocated
+
+2022-06-18T10:14:03.993Z	INFO	scheduler/context.go:859	mycluster
+
+2022-06-18T10:14:03.993Z	DEBUG	rmproxy/rmproxy.go:64	enqueue event	{"eventType": "*rmevent.RMNewAllocationsEvent", "event": {"RmID":"mycluster","Allocations":[{"allocationKey":"fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93","UUID":"1a4f17fa-a528-461c-894b-3ace46d3cc4e","resourcePerAlloc":{"resources":{"memory":{"value":2048000000},"vcore":{"value":1000}}},"nodeID":"lab5","applicationID":"nginx_2019_01_22_00001"}]}, "currentQueueSize": 0}
+2022-06-18T10:14:03.993Z	DEBUG	callback/scheduler_callback.go:44	UpdateAllocation callback received	{"UpdateAllocationResponse": "new:<allocationKey:\"fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93\" UUID:\"1a4f17fa-a528-461c-894b-3ace46d3cc4e\" resourcePerAlloc:<resources:<key:\"memory\" value:<value:2048000000 > > resources:<key:\"vcore\" value:<value:1000 > > > nodeID:\"lab5\" applicationID:\"nginx_2019_01_22_00001\" > "}
+2022-06-18T10:14:03.993Z	DEBUG	callback/scheduler_callback.go:49	callback: response to new allocation	{"allocationKey": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93", "UUID": "1a4f17fa-a528-461c-894b-3ace46d3cc4e", "applicationID": "nginx_2019_01_22_00001", "nodeID": "lab5"}
+2022-06-18T10:14:03.993Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AssumePod.Pre)	{"nodes": 2, "pods": 14, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 13, "phases": {"Pending":2,"Running":12}}
+2022-06-18T10:14:03.993Z	DEBUG	external/scheduler_cache.go:364	Adding assumed pod to cache	{"podName": "nginx-758d456f6b-xf4d7", "podKey": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93", "node": "lab5", "allBound": true}
+2022-06-18T10:14:03.993Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "nginx-758d456f6b-xf4d7", "podKey": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93"}
+2022-06-18T10:14:03.993Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (AssumePod.Post)	{"nodes": 2, "pods": 14, "assumed": 1, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":2,"Running":12}}
+2022-06-18T10:14:03.993Z	DEBUG	scheduler/context.go:871	Successfully synced shim on new allocation. response: no. of allocations: 1
+2022-06-18T10:14:03.993Z	DEBUG	cache/task.go:600	shim task state transition	{"app": "nginx_2019_01_22_00001", "task": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93", "taskAlias": "yunikorn/nginx-758d456f6b-xf4d7", "source": "Scheduling", "destination": "TaskAllocated", "event": "TaskAllocated"}
+2022-06-18T10:14:03.993Z	DEBUG	cache/task.go:392	bind pod volumes	{"podName": "nginx-758d456f6b-xf4d7", "podUID": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93"}
+2022-06-18T10:14:03.993Z	INFO	cache/context.go:359	Binding Pod Volumes skipped: all volumes already bound	{"podName": "nginx-758d456f6b-xf4d7"}
+2022-06-18T10:14:03.993Z	DEBUG	cache/task.go:405	bind pod	{"podName": "nginx-758d456f6b-xf4d7", "podUID": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93"}
+2022-06-18T10:14:03.993Z	INFO	client/kubeclient.go:84	bind pod to node	{"podName": "nginx-758d456f6b-xf4d7", "podUID": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93", "nodeID": "lab5"}
+2022-06-18T10:14:03.996Z	INFO	cache/task.go:418	successfully bound pod	{"podName": "nginx-758d456f6b-xf4d7"}
+2022-06-18T10:14:03.996Z	DEBUG	cache/task.go:600	shim task state transition	{"app": "nginx_2019_01_22_00001", "task": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93", "taskAlias": "yunikorn/nginx-758d456f6b-xf4d7", "source": "TaskAllocated", "destination": "Bound", "event": "TaskBound"}
+2022-06-18T10:14:03.997Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (UpdatePod.Pre)	{"nodes": 2, "pods": 14, "assumed": 1, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":2,"Running":12}}
+2022-06-18T10:14:03.997Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "nginx-758d456f6b-xf4d7", "podKey": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93"}
+2022-06-18T10:14:03.997Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (UpdatePod.Post)	{"nodes": 2, "pods": 14, "assumed": 1, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":2,"Running":12}}
+2022-06-18T10:14:03.998Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:03.998Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:04.012Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (UpdatePod.Pre)	{"nodes": 2, "pods": 14, "assumed": 1, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":2,"Running":12}}
+2022-06-18T10:14:04.012Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "nginx-758d456f6b-xf4d7", "podKey": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93"}
+2022-06-18T10:14:04.012Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (UpdatePod.Post)	{"nodes": 2, "pods": 14, "assumed": 1, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":2,"Running":12}}
+2022-06-18T10:14:04.976Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:04.999Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:04.999Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:05.621Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (UpdatePod.Pre)	{"nodes": 2, "pods": 14, "assumed": 1, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":2,"Running":12}}
+2022-06-18T10:14:05.621Z	DEBUG	external/scheduler_cache.go:301	Putting pod in cache	{"podName": "nginx-758d456f6b-xf4d7", "podKey": "fb6cdfb9-4b7b-41a7-a3cd-ebb8df02fd93"}
+2022-06-18T10:14:05.621Z	DEBUG	external/scheduler_cache.go:446	Scheduler cache state (UpdatePod.Post)	{"nodes": 2, "pods": 14, "assumed": 0, "pendingAllocs": 0, "inProgressAllocs": 0, "podsAssigned": 14, "phases": {"Pending":1,"Running":13}}
+2022-06-18T10:14:05.960Z	DEBUG	scheduler/partition_manager.go:113	removing queue	{"queueName": "root.default", "partitionName": "[mycluster]default"}
+2022-06-18T10:14:05.960Z	DEBUG	scheduler/partition_manager.go:126	skip removing the queue	{"reason": "there are existing assigned apps or leaf queues", "queue": "root.default", "partitionName": "[mycluster]default"}
+2022-06-18T10:14:05.960Z	DEBUG	scheduler/partition_manager.go:83	time consumed for queue cleaner	{"duration": "53.686µs"}
+2022-06-18T10:14:05.977Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:06.000Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:06.000Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:06.977Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:07.000Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:07.000Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:07.977Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:08.001Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:08.001Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:08.978Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:09.001Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:09.001Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:09.979Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:10.002Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:10.002Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:10.979Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:11.003Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:11.003Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:11.980Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:12.003Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:12.003Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:12.981Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:13.004Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:13.004Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:13.981Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:14.005Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:14.005Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:14.982Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:15.006Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:15.006Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:15.961Z	DEBUG	scheduler/partition_manager.go:113	removing queue	{"queueName": "root.default", "partitionName": "[mycluster]default"}
+2022-06-18T10:14:15.961Z	DEBUG	scheduler/partition_manager.go:126	skip removing the queue	{"reason": "there are existing assigned apps or leaf queues", "queue": "root.default", "partitionName": "[mycluster]default"}
+2022-06-18T10:14:15.961Z	DEBUG	scheduler/partition_manager.go:83	time consumed for queue cleaner	{"duration": "55.972µs"}
+2022-06-18T10:14:15.983Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:16.006Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:16.006Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:16.983Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:17.007Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:17.007Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:17.984Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:18.007Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:18.007Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:18.984Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:19.008Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:19.008Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:19.985Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:20.009Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:20.009Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:20.986Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:21.009Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:21.009Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:21.986Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:22.010Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:22.010Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:22.987Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:23.010Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:23.010Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:23.987Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:24.011Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:24.011Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:24.951Z	DEBUG	metrics/metrics_collector.go:68	Adding current status to historical partition data
+2022-06-18T10:14:24.951Z	DEBUG	scheduler/health_checker.go:87	Scheduler is healthy	{"health check values": [{"Name":"Scheduling errors","Succeeded":true,"Description":"Check for scheduling error entries in metrics","DiagnosisMessage":"There were 0 scheduling errors logged in the metrics"},{"Name":"Failed nodes","Succeeded":true,"Description":"Check for failed nodes entries in metrics","DiagnosisMessage":"There were 0 failed nodes logged in the metrics"},{"Name":"Negative resources","Succeeded":true,"Description":"Check for negative resources in the partitions","DiagnosisMessage":"Partitions with negative resources: []"},{"Name":"Negative resources","Succeeded":true,"Description":"Check for negative resources in the nodes","DiagnosisMessage":"Nodes with negative resources: []"},{"Name":"Consistency of data","Succeeded":true,"Description":"Check if a node's allocated resource <= total resource of the node","DiagnosisMessage":"Nodes with inconsistent data: []"},{"Name":"Consistency of data","Succeeded":true,"Description":"Check if total partition resource == sum of the node resources from the partition","DiagnosisMessage":"Partitions with inconsistent data: []"},{"Name":"Consistency of data","Succeeded":true,"Description":"Check if node total resource = allocated resource + occupied resource + available resource","DiagnosisMessage":"Nodes with inconsistent data: []"},{"Name":"Consistency of data","Succeeded":true,"Description":"Check if node capacity >= allocated resources on the node","DiagnosisMessage":"Nodes with inconsistent data: []"},{"Name":"Reservation check","Succeeded":true,"Description":"Check the reservation nr compared to the number of nodes","DiagnosisMessage":"Reservation/node nr ratio: [0.000000]"},{"Name":"Orphan allocation on node check","Succeeded":true,"Description":"Check if there are orphan allocations on the nodes","DiagnosisMessage":"Orphan allocations: []"},{"Name":"Orphan allocation on app check","Succeeded":true,"Description":"Check if there are orphan allocations on the applications","DiagnosisMessage":"OrphanAllocations: []"}]}
+2022-06-18T10:14:24.988Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:25.012Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:25.012Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:25.959Z	DEBUG	security/usergroup.go:96	time consumed cleaning the UserGroupCache	{"duration": "1.049µs"}
+2022-06-18T10:14:25.962Z	DEBUG	scheduler/partition_manager.go:113	removing queue	{"queueName": "root.default", "partitionName": "[mycluster]default"}
+2022-06-18T10:14:25.962Z	DEBUG	scheduler/partition_manager.go:126	skip removing the queue	{"reason": "there are existing assigned apps or leaf queues", "queue": "root.default", "partitionName": "[mycluster]default"}
+2022-06-18T10:14:25.962Z	DEBUG	scheduler/partition_manager.go:83	time consumed for queue cleaner	{"duration": "28.337µs"}
+2022-06-18T10:14:25.989Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:26.013Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:26.013Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:26.989Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:27.014Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:27.014Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:27.990Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:28.014Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:28.014Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:28.990Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:29.015Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:29.015Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:29.991Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:30.016Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:30.016Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:30.992Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:31.016Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:31.016Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
+2022-06-18T10:14:31.992Z	DEBUG	scheduler/scheduler.go:167	inspect outstanding requests
+2022-06-18T10:14:32.017Z	DEBUG	configs/configvalidator.go:331	checking partition queue config	{"partitionName": "default"}
+2022-06-18T10:14:32.017Z	DEBUG	configs/configvalidator.go:133	checking placement rule config	{"partitionName": "default"}
