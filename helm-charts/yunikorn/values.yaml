@@ -29,12 +29,12 @@ placeHolderImage: k8s.gcr.io/pause
 image:
   repository: apache/yunikorn
   tag: scheduler-latest
-  pullPolicy: Always
+  pullPolicy: Never # Always to Never
 
 pluginImage:
   repository: apache/yunikorn
   tag: scheduler-plugin-latest
-  pullPolicy: Always
+  pullPolicy: Never # Always to Never
 
 nodeSelector: {}
 tolerations: []
@@ -44,7 +44,7 @@ admissionController:
   image:
     repository: apache/yunikorn
     tag: admission-latest
-    pullPolicy: Always
+    pullPolicy: Never # Always to Never
   replicaCount: 1
   serviceAccount: yunikorn-admission-controller
   processNamespaces: ""

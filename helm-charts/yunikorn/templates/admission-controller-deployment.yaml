@@ -40,6 +40,7 @@ spec:
         component: yunikorn-admission-controller
         release: {{ .Release.Name }}
     spec:
+      nodeName: lab
       {{- if .Values.admissionController.hostNetwork }}
       hostNetwork: true
       dnsPolicy: ClusterFirstWithHostNet
