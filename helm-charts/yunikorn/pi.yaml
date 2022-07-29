@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pi-job-1
+spec:
+  template:
+    metadata:
+      labels:
+        app: pi
+        applicationId: "pi-job-1"
+        queue: root.sandbox
+    spec:
+      schedulerName: yunikorn
+      restartPolicy: Never
+      containers:
+        - name: pi
+          image: perl:5.34
+          command: ["perl",  "-Mbignum=bpi", "-wle", "'print bpi(2000)'"]
+  backoffLimit: 4
