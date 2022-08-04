@@ -131,7 +131,7 @@ configuration: |
         resourceweights:
             vcore: 4.0
             memory: 1.0
-     queues:
+      queues:
         -
           name: root
           submitacl: '*'
